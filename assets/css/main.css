@@ -8,54 +8,54 @@
    ========================================================================== */
 :root {
     /* --- 1. Deep Midnight Slate & Charcoal Color Foundation --- */
-    --bg-void: #f8fafc; /* Clean off-white background */              /* Deep Midnight Slate background for hero & body canvas */
-    --bg-base: #ffffff; /* Pure white */              /* Primary rich slate canvas */
-    --bg-surface-1: #ffffff; /* Elevated white */          /* Elevation 1: Primary cards, containers, panels */
-    --bg-surface-2: #f1f5f9; /* Light slate */          /* Elevation 2: Secondary cards, form inputs, dropdowns */
-    --bg-surface-3: #e2e8f0; /* Muted slate */          /* Elevation 3: Elevated tags, active badges, modals */
-    --bg-glass: rgba(255, 255, 255, 0.75); /* Translucent frosted glass for cards */
-    --bg-glass-heavy: rgba(255, 255, 255, 0.88); /* Heavy frosted backdrop for navbar & modals */
+    --bg-void: #0b0f19;              /* Deep Midnight Slate background for hero & body canvas */
+    --bg-base: #0f172a;              /* Primary rich slate canvas */
+    --bg-surface-1: #161f33;          /* Elevation 1: Primary cards, containers, panels */
+    --bg-surface-2: #1e293b;          /* Elevation 2: Secondary cards, form inputs, dropdowns */
+    --bg-surface-3: #263654;          /* Elevation 3: Elevated tags, active badges, modals */
+    --bg-glass: rgba(15, 23, 42, 0.75); /* Translucent frosted glass for cards */
+    --bg-glass-heavy: rgba(11, 15, 25, 0.88); /* Heavy frosted backdrop for navbar & modals */
 
     /* --- 2. High-Contrast Typography Palette --- */
-    --text-primary: #0f172a; /* Dark slate */          /* Pure crisp white for massive headlines */
-    --text-secondary: #334155;        /* High-legibility bright silver slate for body copy */
-    --text-muted: #64748b;            /* Architectural clear slate gray for meta tags & subtitles */
-    --text-dim: rgba(15, 23, 42, 0.5); /* Tertiary subtle text */
-    --text-faint: rgba(15, 23, 42, 0.15); /* Watermarks, decorative numerals & stamps */
-    --text-on-neon: #ffffff;          /* Contrast dark text on neon fills */
-    --text-dark: #0f172a;             /* Backward-compatible override for dark theme */
+    --text-primary: #ffffff;          /* Pure crisp white for massive headlines */
+    --text-secondary: #cbd5e1;        /* High-legibility bright silver slate for body copy */
+    --text-muted: #94a3b8;            /* Architectural clear slate gray for meta tags & subtitles */
+    --text-dim: rgba(255, 255, 255, 0.5); /* Tertiary subtle text */
+    --text-faint: rgba(255, 255, 255, 0.25); /* Watermarks, decorative numerals & stamps */
+    --text-on-neon: #0b0f19;          /* Contrast dark text on neon fills */
+    --text-dark: #ffffff;             /* Backward-compatible override for dark theme */
 
     /* --- 3. Electric Neon Accents (Signature QClay Visual Energy) --- */
-    --accent-neon: #00A859; /* Cyber Green for contrast on white */           /* Signature QClay electric neon yellow-lime */
-    --accent-neon-bright: #008f4c;    /* High-voltage glow & active hover state */
-    --accent-neon-hover: #007a41;     /* Pressed button & deep interaction state */
-    --accent-brand: #00A859;
-    --accent-brand-hover: #008f4c;
-    --accent-brand-glow: rgba(0, 168, 89, 0.15);
+    --accent-neon: #ccff00;           /* Signature QClay electric neon yellow-lime */
+    --accent-neon-bright: #d4ff00;    /* High-voltage glow & active hover state */
+    --accent-neon-hover: #b8e600;     /* Pressed button & deep interaction state */
+    --accent-brand: #C8E019;
+    --accent-brand-hover: #d4ec1f;
+    --accent-brand-glow: rgba(200, 224, 25, 0.25);
     --accent-emerald: #00ff88;        /* Secondary cyber emerald / live status indicator */
     --accent-cyan: #00e5ff;           /* Tertiary cyber cyan for dual gradient accents */
     --accent-neon-glow: rgba(204, 255, 0, 0.15); /* Soft neon ambient aura */
     --accent-neon-border: rgba(204, 255, 0, 0.35); /* Neon container stroke */
 
     /* Aliases for backward-compatibility */
-    --bg-light: #ffffff;
-    --bg-surface: #ffffff;
-    --bg-warm-peach: #ffffff;
-    --bg-light-gray: #f8fafc;
-    --bg-preloader: #f8fafc;
+    --bg-light: #0f172a;
+    --bg-surface: #161f33;
+    --bg-warm-peach: #0f172a;
+    --bg-light-gray: #161f33;
+    --bg-preloader: #0b0f19;
 
     /* --- 4. Volumetric Light & Neon Glow Filters --- */
-    --glow-subtle: 0 0 25px rgba(0, 168, 89, 0.15);
-    --glow-primary: 0 0 40px rgba(0, 168, 89, 0.28);
-    --glow-intense: 0 0 70px rgba(0, 168, 89, 0.45);
+    --glow-subtle: 0 0 25px rgba(204, 255, 0, 0.15);
+    --glow-primary: 0 0 40px rgba(204, 255, 0, 0.28);
+    --glow-intense: 0 0 70px rgba(204, 255, 0, 0.45);
     --glow-emerald: 0 0 35px rgba(0, 255, 136, 0.25);
 
     /* --- 5. Architectural Borders & Structural Lines --- */
-    --border-subtle: rgba(0, 0, 0, 0.08);
-    --border-medium: rgba(0, 0, 0, 0.14);
-    --border-bright: rgba(0, 168, 89, 0.3);
-    --border-neon-bright: #00A859;
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-medium: rgba(255, 255, 255, 0.14);
+    --border-bright: rgba(204, 255, 0, 0.3);
+    --border-neon-bright: #ccff00;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
     /* --- 6. Font Families & Typography Stack --- */
     --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -2170,24 +2170,3 @@ html.lenis body {
 
 @media (min-width: 992px) { .scale-lg-up { transform: scale(1.05) !important; z-index: 2; position: relative; } }
 @media (max-width: 991px) { .pricing-card { margin-bottom: 2rem; } }
-
-
-/* ==========================================================================
-   LIGHT THEME BOOTSTRAP OVERRIDES (Hijacking Hardcoded Classes)
-   ========================================================================== */
-.text-white, .text-light, .text-white-50 {
-    color: var(--text-primary) !important;
-}
-.bg-dark, .bg-black, .bg-surface, .bg-brand-translucent {
-    background-color: var(--bg-surface-1) !important;
-}
-.border-light-subtle, .border-light {
-    border-color: var(--border-subtle) !important;
-}
-.navbar.navbar-dark {
-    /* Override Bootstrap navbar-dark to use dark text for items */
-    --bs-navbar-color: var(--text-secondary);
-    --bs-navbar-hover-color: var(--text-primary);
-    --bs-navbar-active-color: var(--text-primary);
-    --bs-navbar-brand-color: var(--text-primary);
-}

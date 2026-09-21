@@ -91,24 +91,24 @@ $custom_meta = [
 <body class="min-h-screen flex flex-col antialiased">
 
     <!-- Executive Header Navigation -->
-    <header class="border-b border-slate-200/80 bg-slate-50/80 backdrop-blur-xl sticky top-0 z-50">
+    <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <!-- Brand & Advisory Desk Identity -->
             <div class="flex items-center gap-3">
                 <a href="index" class="flex items-center gap-2 group" title="Return to Automatixes">
                     <img src="assets/img/logo/automatixes-logo-new.png" alt="Automatixes" class="h-8 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity">
                 </a>
-                <div class="h-5 w-px bg-slate-100 mx-1 hidden sm:block"></div>
+                <div class="h-5 w-px bg-slate-800 mx-1 hidden sm:block"></div>
                 <div class="flex items-center gap-2.5">
                     <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-sm">
                         <i class="fa-solid fa-building-columns"></i>
                     </div>
                     <div>
                         <div class="flex items-center gap-2">
-                            <h1 class="font-heading font-bold text-sm sm:text-base text-slate-900 tracking-tight">Property Advisor</h1>
+                            <h1 class="font-heading font-bold text-sm sm:text-base text-white tracking-tight">Property Advisor</h1>
                             <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider">Official Desk</span>
                         </div>
-                        <p class="text-[11px] text-slate-600 flex items-center gap-1.5">
+                        <p class="text-[11px] text-slate-400 flex items-center gap-1.5">
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                             <span>Senior Real Estate Advisory • Active 24/7</span>
                         </p>
@@ -128,13 +128,13 @@ $custom_meta = [
                     <span>Official WhatsApp Desk</span>
                 </a>
 
-                <a href="index" class="px-3 py-1.5 rounded-lg border border-slate-300/80 bg-white/80 hover:bg-slate-100 text-slate-700 hover:text-slate-900 text-xs font-medium transition-all flex items-center gap-1.5">
+                <a href="index" class="px-3 py-1.5 rounded-lg border border-slate-700/80 bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white text-xs font-medium transition-all flex items-center gap-1.5">
                     <i class="fa-solid fa-arrow-left text-[11px]"></i>
                     <span class="hidden sm:inline">Back to Automatixes</span>
                     <span class="sm:hidden">Exit</span>
                 </a>
 
-                <button id="btn-clear-chat" title="Clear Session" class="p-2 rounded-lg border border-slate-300/80 bg-white/80 hover:bg-rose-500/20 hover:border-rose-500/40 hover:text-rose-400 text-slate-600 text-xs transition-all">
+                <button id="btn-clear-chat" title="Clear Session" class="p-2 rounded-lg border border-slate-700/80 bg-slate-900/80 hover:bg-rose-500/20 hover:border-rose-500/40 hover:text-rose-400 text-slate-400 text-xs transition-all">
                     <i class="fa-solid fa-rotate-left"></i>
                 </button>
             </div>
@@ -143,7 +143,7 @@ $custom_meta = [
 
     <!-- Advisory Chat Showcase Container -->
     <main class="flex-1 max-w-5xl w-full mx-auto p-2 sm:p-4 flex flex-col h-[calc(100vh-4rem)]">
-        <div class="flex-1 flex flex-col rounded-2xl border border-slate-200/80 bg-white/40 backdrop-blur-md overflow-hidden shadow-2xl">
+        <div class="flex-1 flex flex-col rounded-2xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-md overflow-hidden shadow-2xl">
             
             <!-- Message Transcript Area -->
             <div id="chat-messages" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 custom-scrollbar">
@@ -151,32 +151,32 @@ $custom_meta = [
             </div>
 
             <!-- Suggested Inquiry Topics Bar -->
-            <div class="px-4 py-3 bg-slate-50/70 border-t border-slate-200/70">
+            <div class="px-4 py-3 bg-slate-950/70 border-t border-slate-800/70">
                 <div class="flex items-center justify-between mb-2">
-                    <div class="flex items-center gap-1.5 text-[11px] font-semibold text-slate-600">
+                    <div class="flex items-center gap-1.5 text-[11px] font-semibold text-slate-400">
                         <i class="fa-solid fa-compass text-emerald-400"></i>
                         <span>Frequently Inquired Topics:</span>
                     </div>
                     <span class="text-[10px] text-slate-500 font-mono hidden sm:inline">Official Benchmark Registry</span>
                 </div>
                 <div class="overflow-x-auto whitespace-nowrap flex gap-2 pb-1 custom-scrollbar">
-                    <button class="quick-prompt px-3 py-1.5 rounded-lg bg-white/90 hover:bg-emerald-950/60 hover:border-emerald-500/50 border border-slate-200 text-xs text-slate-800 hover:text-emerald-300 transition-all flex items-center gap-1.5 shrink-0" data-prompt="DHA aur Bahria Town me 1 Kanal plot ka kya rate chal raha hai?">
+                    <button class="quick-prompt px-3 py-1.5 rounded-lg bg-slate-900/90 hover:bg-emerald-950/60 hover:border-emerald-500/50 border border-slate-800 text-xs text-slate-200 hover:text-emerald-300 transition-all flex items-center gap-1.5 shrink-0" data-prompt="DHA aur Bahria Town me 1 Kanal plot ka kya rate chal raha hai?">
                         <i class="fa-solid fa-map-pin text-emerald-400 text-[11px]"></i>
                         <span>1 Kanal Benchmarks (DHA / Bahria)</span>
                     </button>
-                    <button class="quick-prompt px-3 py-1.5 rounded-lg bg-white/90 hover:bg-emerald-950/60 hover:border-emerald-500/50 border border-slate-200 text-xs text-slate-800 hover:text-emerald-300 transition-all flex items-center gap-1.5 shrink-0" data-prompt="Property khareedne ke liye kon se documents zaroori hotay hain?">
+                    <button class="quick-prompt px-3 py-1.5 rounded-lg bg-slate-900/90 hover:bg-emerald-950/60 hover:border-emerald-500/50 border border-slate-800 text-xs text-slate-200 hover:text-emerald-300 transition-all flex items-center gap-1.5 shrink-0" data-prompt="Property khareedne ke liye kon se documents zaroori hotay hain?">
                         <i class="fa-solid fa-file-shield text-blue-400 text-[11px]"></i>
                         <span>Required Documents (Fard / NOC)</span>
                     </button>
-                    <button class="quick-prompt px-3 py-1.5 rounded-lg bg-white/90 hover:bg-emerald-950/60 hover:border-emerald-500/50 border border-slate-200 text-xs text-slate-800 hover:text-emerald-300 transition-all flex items-center gap-1.5 shrink-0" data-prompt="5 Marla ghar ke liye kitni down payment deni hogi?">
+                    <button class="quick-prompt px-3 py-1.5 rounded-lg bg-slate-900/90 hover:bg-emerald-950/60 hover:border-emerald-500/50 border border-slate-800 text-xs text-slate-200 hover:text-emerald-300 transition-all flex items-center gap-1.5 shrink-0" data-prompt="5 Marla ghar ke liye kitni down payment deni hogi?">
                         <i class="fa-solid fa-calculator text-amber-400 text-[11px]"></i>
                         <span>5 Marla Down Payment & Installments</span>
                     </button>
-                    <button class="quick-prompt px-3 py-1.5 rounded-lg bg-white/90 hover:bg-emerald-950/60 hover:border-emerald-500/50 border border-slate-200 text-xs text-slate-800 hover:text-emerald-300 transition-all flex items-center gap-1.5 shrink-0" data-prompt="Commercial plots ka rental yield aur ROI kaisa hai?">
+                    <button class="quick-prompt px-3 py-1.5 rounded-lg bg-slate-900/90 hover:bg-emerald-950/60 hover:border-emerald-500/50 border border-slate-800 text-xs text-slate-200 hover:text-emerald-300 transition-all flex items-center gap-1.5 shrink-0" data-prompt="Commercial plots ka rental yield aur ROI kaisa hai?">
                         <i class="fa-solid fa-chart-line text-teal-400 text-[11px]"></i>
                         <span>Commercial vs Residential ROI</span>
                     </button>
-                    <button class="quick-prompt px-3 py-1.5 rounded-lg bg-white/90 hover:bg-emerald-950/60 hover:border-emerald-500/50 border border-slate-200 text-xs text-slate-800 hover:text-emerald-300 transition-all flex items-center gap-1.5 shrink-0" data-prompt="Fard aur Intiqal me kya farq hota hai?">
+                    <button class="quick-prompt px-3 py-1.5 rounded-lg bg-slate-900/90 hover:bg-emerald-950/60 hover:border-emerald-500/50 border border-slate-800 text-xs text-slate-200 hover:text-emerald-300 transition-all flex items-center gap-1.5 shrink-0" data-prompt="Fard aur Intiqal me kya farq hota hai?">
                         <i class="fa-solid fa-stamp text-indigo-400 text-[11px]"></i>
                         <span>Fard vs Intiqal (Registry Status)</span>
                     </button>
@@ -184,21 +184,21 @@ $custom_meta = [
             </div>
 
             <!-- Input Bar -->
-            <div class="p-3 sm:p-4 bg-slate-50/95 border-t border-slate-200/80">
+            <div class="p-3 sm:p-4 bg-slate-950/95 border-t border-slate-800/80">
                 <form id="chat-form" class="flex items-center gap-2">
                     <div class="relative flex-1">
                         <input 
                             type="text" 
                             id="chat-input" 
                             placeholder="Inquire about property rates, documentation verification, or site viewings..."
-                            class="w-full bg-white/90 border border-slate-300/80 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 shadow-inner"
+                            class="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 shadow-inner"
                             autocomplete="off"
                         >
                     </div>
                     <button 
                         type="submit" 
                         id="btn-send"
-                        class="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-slate-900 font-semibold text-sm shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer disabled:opacity-50"
+                        class="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer disabled:opacity-50"
                     >
                         <span>Send</span>
                         <i class="fa-solid fa-paper-plane text-xs"></i>
@@ -255,39 +255,39 @@ $custom_meta = [
             msgEl.className = "flex items-start gap-3 message-animate";
 
             msgEl.innerHTML = `
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-800 flex items-center justify-center text-slate-900 text-sm shrink-0 shadow-md shadow-emerald-500/20">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-800 flex items-center justify-center text-white text-sm shrink-0 shadow-md shadow-emerald-500/20">
                     <i class="fa-solid fa-building-columns"></i>
                 </div>
                 <div class="max-w-[95%] sm:max-w-[85%]">
-                    <div class="bg-white/90 border border-slate-200 text-slate-900 p-4 sm:p-5 rounded-2xl rounded-tl-none shadow-xl text-xs sm:text-sm leading-relaxed">
+                    <div class="bg-slate-900/90 border border-slate-800 text-slate-100 p-4 sm:p-5 rounded-2xl rounded-tl-none shadow-xl text-xs sm:text-sm leading-relaxed">
                         <div class="flex items-center justify-between mb-2">
-                            <h3 class="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
+                            <h3 class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
                                 <span>Assalam-o-Alaikum, welcome to the Property Advisory Desk. 👋</span>
                             </h3>
                         </div>
-                        <p class="text-slate-700 text-xs sm:text-sm mb-3.5 leading-relaxed">
+                        <p class="text-slate-300 text-xs sm:text-sm mb-3.5 leading-relaxed">
                             I am your dedicated Property Consultant. I assist clients with verified pricing benchmarks, documentation verification (NOC & Fard), installment schedules, and scheduling private site viewings across prime developments in Pakistan.
                         </p>
 
-                        <div class="bg-slate-50/80 border border-slate-200/90 rounded-xl p-3.5 mb-2">
+                        <div class="bg-slate-950/80 border border-slate-800/90 rounded-xl p-3.5 mb-2">
                             <p class="text-xs font-semibold text-emerald-400 mb-2.5 flex items-center gap-1.5">
                                 <i class="fa-solid fa-layer-group"></i>
                                 Select an inquiry topic to begin:
                             </p>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                <button onclick="askSuggestedQuestion('DHA aur Bahria Town me 1 Kanal plot ka kya rate chal raha hai?')" class="text-left p-2.5 rounded-lg bg-white hover:bg-emerald-950/40 border border-slate-200 hover:border-emerald-500/40 text-xs text-slate-800 transition-all flex items-center gap-2">
+                                <button onclick="askSuggestedQuestion('DHA aur Bahria Town me 1 Kanal plot ka kya rate chal raha hai?')" class="text-left p-2.5 rounded-lg bg-slate-900 hover:bg-emerald-950/40 border border-slate-800 hover:border-emerald-500/40 text-xs text-slate-200 transition-all flex items-center gap-2">
                                     <i class="fa-solid fa-map-pin text-emerald-400 shrink-0 text-[11px]"></i>
                                     <span class="truncate">1 Kanal plot rates (DHA/Bahria)</span>
                                 </button>
-                                <button onclick="askSuggestedQuestion('Property khareedne ke liye kon se documents zaroori hotay hain?')" class="text-left p-2.5 rounded-lg bg-white hover:bg-emerald-950/40 border border-slate-200 hover:border-emerald-500/40 text-xs text-slate-800 transition-all flex items-center gap-2">
+                                <button onclick="askSuggestedQuestion('Property khareedne ke liye kon se documents zaroori hotay hain?')" class="text-left p-2.5 rounded-lg bg-slate-900 hover:bg-emerald-950/40 border border-slate-800 hover:border-emerald-500/40 text-xs text-slate-200 transition-all flex items-center gap-2">
                                     <i class="fa-solid fa-file-shield text-blue-400 shrink-0 text-[11px]"></i>
                                     <span class="truncate">Zaroori Documents (Fard / NOC)</span>
                                 </button>
-                                <button onclick="askSuggestedQuestion('5 Marla ghar ke liye kitni down payment deni hogi?')" class="text-left p-2.5 rounded-lg bg-white hover:bg-emerald-950/40 border border-slate-200 hover:border-emerald-500/40 text-xs text-slate-800 transition-all flex items-center gap-2">
+                                <button onclick="askSuggestedQuestion('5 Marla ghar ke liye kitni down payment deni hogi?')" class="text-left p-2.5 rounded-lg bg-slate-900 hover:bg-emerald-950/40 border border-slate-800 hover:border-emerald-500/40 text-xs text-slate-200 transition-all flex items-center gap-2">
                                     <i class="fa-solid fa-calculator text-amber-400 shrink-0 text-[11px]"></i>
                                     <span class="truncate">5 Marla Down Payment & Qist</span>
                                 </button>
-                                <button onclick="askSuggestedQuestion('Commercial plots ka rental yield aur ROI kaisa hai?')" class="text-left p-2.5 rounded-lg bg-white hover:bg-emerald-950/40 border border-slate-200 hover:border-emerald-500/40 text-xs text-slate-800 transition-all flex items-center gap-2">
+                                <button onclick="askSuggestedQuestion('Commercial plots ka rental yield aur ROI kaisa hai?')" class="text-left p-2.5 rounded-lg bg-slate-900 hover:bg-emerald-950/40 border border-slate-800 hover:border-emerald-500/40 text-xs text-slate-200 transition-all flex items-center gap-2">
                                     <i class="fa-solid fa-chart-line text-teal-400 shrink-0 text-[11px]"></i>
                                     <span class="truncate">Commercial vs Residential ROI</span>
                                 </button>
@@ -325,7 +325,7 @@ $custom_meta = [
             msgEl.className = "flex justify-end message-animate";
             msgEl.innerHTML = `
                 <div class="max-w-[85%] sm:max-w-[75%]">
-                    <div class="bg-gradient-to-r from-emerald-600 to-teal-700 text-slate-900 px-4 py-3 rounded-2xl rounded-tr-none shadow-md text-xs sm:text-sm leading-relaxed">
+                    <div class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white px-4 py-3 rounded-2xl rounded-tr-none shadow-md text-xs sm:text-sm leading-relaxed">
                         ${escapeHTML(text)}
                     </div>
                     <div class="text-[10px] text-slate-500 text-right mt-1">${time}</div>
@@ -341,10 +341,10 @@ $custom_meta = [
             typingEl.id = "typing-indicator";
             typingEl.className = "flex items-start gap-3 message-animate";
             typingEl.innerHTML = `
-                <div class="w-9 h-9 rounded-xl bg-slate-100 border border-slate-300 flex items-center justify-center text-emerald-400 text-xs shrink-0">
+                <div class="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-emerald-400 text-xs shrink-0">
                     <i class="fa-solid fa-building-columns"></i>
                 </div>
-                <div class="bg-white border border-slate-200 px-4 py-3 rounded-2xl rounded-tl-none flex items-center gap-1.5 shadow-md">
+                <div class="bg-slate-900 border border-slate-800 px-4 py-3 rounded-2xl rounded-tl-none flex items-center gap-1.5 shadow-md">
                     <div class="typing-dot"></div>
                     <div class="typing-dot"></div>
                     <div class="typing-dot"></div>
@@ -368,11 +368,11 @@ $custom_meta = [
             let formattedContent = formatMarkdown(markdownText);
 
             msgEl.innerHTML = `
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-800 flex items-center justify-center text-slate-900 text-xs shrink-0 shadow-md shadow-emerald-500/20">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-800 flex items-center justify-center text-white text-xs shrink-0 shadow-md shadow-emerald-500/20">
                     <i class="fa-solid fa-building-columns"></i>
                 </div>
                 <div class="max-w-[95%] sm:max-w-[85%]">
-                    <div class="bg-white/90 border border-slate-200 text-slate-900 px-4 py-3.5 rounded-2xl rounded-tl-none shadow-md text-xs sm:text-sm leading-relaxed">
+                    <div class="bg-slate-900/90 border border-slate-800 text-slate-100 px-4 py-3.5 rounded-2xl rounded-tl-none shadow-md text-xs sm:text-sm leading-relaxed">
                         ${formattedContent}
                     </div>
                     <div class="text-[10px] text-slate-500 mt-1">${time}</div>
@@ -393,10 +393,10 @@ $custom_meta = [
                 text = JSON.stringify(text);
             }
             let html = escapeHTML(text);
-            html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 font-bold">$1</strong>');
-            html = html.replace(/\*(.*?)\*/g, '<em class="text-slate-700">$1</em>');
-            html = html.replace(/^\s*[-•]\s+(.*)$/gm, '<li class="ml-4 list-disc text-slate-700 my-0.5">$1</li>');
-            html = html.replace(/^\s*(\d+)\.\s+(.*)$/gm, '<li class="ml-4 list-decimal text-slate-700 my-0.5">$2</li>');
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-bold">$1</strong>');
+            html = html.replace(/\*(.*?)\*/g, '<em class="text-slate-300">$1</em>');
+            html = html.replace(/^\s*[-•]\s+(.*)$/gm, '<li class="ml-4 list-disc text-slate-300 my-0.5">$1</li>');
+            html = html.replace(/^\s*(\d+)\.\s+(.*)$/gm, '<li class="ml-4 list-decimal text-slate-300 my-0.5">$2</li>');
             html = html.replace(/\n/g, '<br/>');
             return html;
         }
