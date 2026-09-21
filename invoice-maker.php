@@ -709,7 +709,7 @@ include 'header.php';
     background-color: transparent;
 }
 .btn-outline-brand:hover {
-    color: #ffffff;
+    color: var(--text-primary);
     background-color: #C8E019;
     border-color: #C8E019;
 }

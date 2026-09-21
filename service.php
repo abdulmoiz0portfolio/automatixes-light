@@ -346,11 +346,11 @@ include 'header.php';
             For more information about our services or a custom quotation on a project, please reach out to our team.
         </p>
         <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
-            <a href="mailto:contact@automatixes.com" class="btn btn-dark rounded-pill px-4 py-3 fw-bold d-inline-flex align-items-center gap-2 shadow" style="background: #080c16; color: #ffffff; border: none; font-size: 15px;">
+            <a href="mailto:contact@automatixes.com" class="btn btn-dark rounded-pill px-4 py-3 fw-bold d-inline-flex align-items-center gap-2 shadow" style="background: #080c16; color: var(--text-primary); border: none; font-size: 15px;">
                 <i class="fa-solid fa-envelope text-accent-neon"></i>
                 <span>contact@automatixes.com</span>
             </a>
-            <a href="https://wa.me/923366920141" target="_blank" class="btn btn-dark rounded-pill px-4 py-3 fw-bold d-inline-flex align-items-center gap-2 shadow" style="background: #080c16; color: #ffffff; border: none; font-size: 15px;">
+            <a href="https://wa.me/923366920141" target="_blank" class="btn btn-dark rounded-pill px-4 py-3 fw-bold d-inline-flex align-items-center gap-2 shadow" style="background: #080c16; color: var(--text-primary); border: none; font-size: 15px;">
                 <i class="fa-brands fa-whatsapp text-success"></i>
                 <span>+92 336 6920141</span>
             </a>

@@ -18,7 +18,7 @@ include 'header.php';
                 <span class="text-white small fw-semibold tracking-wide text-uppercase">Enterprise AI Agents & Workflow Automation</span>
             </div>
             
-            <h1 class="display-3 fw-bold mb-4" style="line-height: 1.15; letter-spacing: -1.5px; color: #ffffff;">
+            <h1 class="display-3 fw-bold mb-4" style="line-height: 1.15; letter-spacing: -1.5px; color: var(--text-primary);">
                 Autonomous AI Agents & <br>
                 <span style="color: var(--accent-neon);">End-to-End Automations</span>
             </h1>

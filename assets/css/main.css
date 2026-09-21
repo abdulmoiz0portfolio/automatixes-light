@@ -2234,3 +2234,71 @@ html.lenis body {
 }
 
 .floating-whatsapp-btn { box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important; }
+
+/* Alternating Section Backgrounds (Light Theme) */
+#about-section { background-color: #ffffff !important; }
+#services-section { background-color: #f4f5f7 !important; }
+#portfolio-section { background-color: #f4f5f7 !important; }
+#technologies-section { background-color: #ffffff !important; }
+#process-section { background-color: #f4f5f7 !important; }
+.cta-section { background-color: #ffffff !important; }
+#testimonials-section { background-color: #f4f5f7 !important; }
+#faq-section { background-color: #ffffff !important; }
+#contact-section { background-color: #f4f5f7 !important; }
+
+/* Force Inner Cards to alternate cleanly against their parent sections */
+#services-section .card { background-color: #ffffff !important; border-color: #e2e8f0 !important; }
+#portfolio-section .card { background-color: #ffffff !important; }
+#technologies-section .card { background-color: #f4f5f7 !important; border-color: #e2e8f0 !important; }
+#process-section .card { background-color: #ffffff !important; border-color: #e2e8f0 !important; }
+#testimonials-section .card { background-color: #ffffff !important; border-color: #e2e8f0 !important; }
+
+/* AI Comparison Section - It immediately follows services-section */
+section.bg-dark { background-color: #ffffff !important; }
+
+/* Fix missing h2 bug */
+.typewriter-anim, h2.text-white, h3.text-white { color: #1a1a1a !important; }
+
+/* Fix Navbar Links */
+.navbar-nav .nav-link { color: #1a1a1a !important; font-weight: 600; }
+ /* Invert logo for light theme */
+.header-nav { background: rgba(255, 255, 255, 0.95) !important; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.header-nav.sticky { background: rgba(255, 255, 255, 0.98) !important; }
+
+/* Fix Marquee / Technology Bar items */
+.scroller__inner li { background-color: #ffffff !important; color: #1a1a1a !important; border: 1px solid #e2e8f0 !important; }
+
+/* Fix Card Text Visibility */
+.card .text-white, .card .text-white-50 {
+    color: #1a1a1a !important;
+}
+.card p, .card h2, .card h3, .card h4, .card h5, .card h6 {
+    color: #1a1a1a !important;
+}
+
+/* Fix Missing Heading */
+.typewriter-anim { opacity: 1 !important; visibility: visible !important; color: #1a1a1a !important; }
+h2 { color: #1a1a1a !important; }
+
+/* Fix AI Comparison Cards */
+.comparison-card { background-color: #ffffff !important; }
+.comparison-card * { color: #1a1a1a !important; }
+
+/* Fix Logo Marquee */
+.client-logo-bar { background-color: #ffffff !important; border-bottom: 1px solid #e2e8f0 !important; }
+.client-logo-bar span { color: #1a1a1a !important; }
+.client-logo-bar img { filter: invert(1) brightness(0); } /* Make white logos black */
+
+/* Fix Technology Marquee Items */
+.scroller li { background-color: #ffffff !important; border: 1px solid #e2e8f0 !important; }
+.scroller li span { color: #1a1a1a !important; }
+.scroller li img { filter: invert(1) brightness(0); } /* Make white logos black */
+
+/* Fix Footer Text */
+footer, .footer-section { background-color: #ffffff !important; color: #1a1a1a !important; }
+footer * { color: #1a1a1a !important; }
+footer a:hover { color: #00A859 !important; }
+
+.tech-card { background-color: #ffffff !important; border: 1px solid #e2e8f0 !important; color: #1a1a1a !important; } .tech-card span { color: #1a1a1a !important; }
+
+#comparison-section .p-4.p-md-5 { background-color: #ffffff !important; } #comparison-section .p-4.p-md-5 * { color: #1a1a1a !important; }

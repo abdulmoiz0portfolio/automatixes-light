@@ -18,7 +18,7 @@ include 'header.php';
                 <span class="text-white small fw-semibold tracking-wide text-uppercase">Automatixes WhatsApp Multi-Device Engine v2.0</span>
             </div>
             
-            <h1 class="display-3 fw-bold mb-4" style="line-height: 1.15; letter-spacing: -2px; color: #ffffff;">
+            <h1 class="display-3 fw-bold mb-4" style="line-height: 1.15; letter-spacing: -2px; color: var(--text-primary);">
                 High-Performance <br>
                 <span style="color: #25D366;">WhatsApp Multi-Device API</span>
             </h1>

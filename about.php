@@ -281,7 +281,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
                 <div class="section__header text-center" style="margin-bottom: 0;">
-                    <h2 class="title title-anim toss-away-title" style="color: #ffffff; font-size: clamp(1.8rem, 4.5vw, 3.4rem); font-weight: 800; line-height: 1.15; letter-spacing: -1px;">
+                    <h2 class="title title-anim toss-away-title" style="color: var(--text-primary); font-size: clamp(1.8rem, 4.5vw, 3.4rem); font-weight: 800; line-height: 1.15; letter-spacing: -1px;">
                         WHAT YOU ACTUALLY<br><span style="color: var(--accent-neon, #D4FF3D);">GET</span>
                     </h2>
                 </div>

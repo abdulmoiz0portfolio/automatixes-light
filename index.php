@@ -238,12 +238,12 @@
         </svg>
     </div>
     
-    <div class="container position-relative z-1 hero-content py-5" style="color: #ffffff;">
+    <div class="container position-relative z-1 hero-content py-5" style="color: var(--text-primary);">
         <span class="badge rounded-pill border border-secondary text-light mb-4 px-4 py-2" style="background: rgba(255,255,255,0.03); letter-spacing: 2px; font-size: 0.75rem; text-transform: uppercase;">
             <span style="color: #C8E019;" class="me-2">🚀</span> DIGITAL AGENCY FOR AMBITIOUS BRANDS
         </span>
         
-        <h1 class="display-3 fw-bold mb-3" style="line-height: 1.15; letter-spacing: -1.5px; color: #ffffff;">
+        <h1 class="display-3 fw-bold mb-3" style="line-height: 1.15; letter-spacing: -1.5px; color: var(--text-primary);">
             We Build Systems That Work <br>
             <span style="color: var(--accent-neon);">While You Sleep.</span>
         </h1>
@@ -257,7 +257,7 @@
             <span class="text-white small fw-bold"><i class="fa-solid fa-clock text-accent-neon me-1"></i> 100+ Hours Saved / Month</span>
         </div>
         
-        <p class="lead mx-auto mb-5" style="max-width: 720px; font-size: 1.15rem; color: #cbd5e1; line-height: 1.7;">
+        <p class="lead mx-auto mb-5" style="max-width: 720px; font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7;">
             We design and deploy custom AI agents, CRM automations, and voice systems for growing businesses across industries — from real estate to e-commerce to professional services. Built on n8n, Make, and OpenAI.
         </p>
 
@@ -265,7 +265,7 @@
             <a href="contact" class="btn text-white rounded-pill px-5 py-3 fw-semibold d-flex align-items-center" style="background: linear-gradient(135deg, #0D6171, #C8E019); border: none; box-shadow: 0 10px 25px rgba(200, 224, 25,0.4); transition: transform 0.2s;">
                 Start Your Project <i class="fa-solid fa-arrow-right ms-2"></i>
             </a>
-            <a href="#portfolio-section" class="btn rounded-pill px-5 py-3 fw-semibold border" style="background: rgba(255,255,255,0.05); color: #ffffff; border-color: rgba(255,255,255,0.1); transition: background 0.2s;">
+            <a href="#portfolio-section" class="btn rounded-pill px-5 py-3 fw-semibold border" style="background: rgba(255,255,255,0.05); color: var(--text-primary); border-color: rgba(255,255,255,0.1); transition: background 0.2s;">
                 View Our Work
             </a>
         </div>
@@ -274,7 +274,7 @@
 <!-- Hero Section End -->
 
 <!-- Trusted Tools & Partnerships Strip Start -->
-<div class="py-4 border-top border-bottom border-light-subtle position-relative overflow-hidden" style="background: #080c16;">
+<div class="py-4 border-top border-bottom border-light-subtle position-relative overflow-hidden" style="background: var(--bg-void);">
     <div class="container">
         <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 gap-md-5 text-center">
             <span class="text-white-50 small text-uppercase font-monospace fw-semibold me-md-2" style="letter-spacing: 1.5px; font-size: 11px;">
@@ -306,7 +306,7 @@
 <!-- Trusted Tools & Partnerships Strip End -->
 
 <!-- About Section Start -->
-<section id="about-section" class="about-section fix section-padding" style="background: #080c16;">
+<section id="about-section" class="about-section fix section-padding" style="background: var(--bg-void);">
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-5">
@@ -380,10 +380,10 @@
             
             <!-- 1. WhatsApp Business Automation -->
             <div class="col-lg-4 col-md-6">
-                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column service-grid-card" style="background: #0d1322; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div class="position-relative overflow-hidden" style="height: 190px; background: #070a12;">
+                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column service-grid-card" style="background: var(--bg-surface-1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 190px; background: var(--bg-surface-2);">
                         <img src="assets/media/n8n/workflows/Customer Support Website agent.png" alt="WhatsApp Business Automation" class="w-100 h-100 object-fit-cover" loading="lazy">
-                        <span class="badge rounded-pill px-3 py-1 position-absolute top-0 end-0 m-3 shadow fw-bold" style="font-size: 10px; background: #25D366; color: #ffffff;">
+                        <span class="badge rounded-pill px-3 py-1 position-absolute top-0 end-0 m-3 shadow fw-bold" style="font-size: 10px; background: var(--bg-void); color: var(--text-primary);">
                             <i class="fa-brands fa-whatsapp me-1"></i> WhatsApp API
                         </span>
                     </div>
@@ -407,10 +407,10 @@
 
             <!-- 2. CRM Lead Sync & Data Integration -->
             <div class="col-lg-4 col-md-6">
-                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column service-grid-card" style="background: #0d1322; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div class="position-relative overflow-hidden" style="height: 190px; background: #070a12;">
+                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column service-grid-card" style="background: var(--bg-surface-1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 190px; background: var(--bg-surface-2);">
                         <img src="assets/media/n8n/workflows/image 1.png" alt="CRM Lead Sync & Data Integration" class="w-100 h-100 object-fit-cover" loading="lazy">
-                        <span class="badge rounded-pill px-3 py-1 position-absolute top-0 end-0 m-3 shadow fw-bold" style="font-size: 10px; background: #38bdf8; color: #000;">
+                        <span class="badge rounded-pill px-3 py-1 position-absolute top-0 end-0 m-3 shadow fw-bold" style="font-size: 10px; background: var(--bg-void); color: #000;">
                             <i class="fa-solid fa-diagram-project me-1"></i> Bi-Directional
                         </span>
                     </div>
@@ -434,10 +434,10 @@
 
             <!-- 3. Email Follow-up & Nurture Automation -->
             <div class="col-lg-4 col-md-6">
-                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column service-grid-card" style="background: #0d1322; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div class="position-relative overflow-hidden" style="height: 190px; background: #070a12;">
+                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column service-grid-card" style="background: var(--bg-surface-1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 190px; background: var(--bg-surface-2);">
                         <img src="assets/media/n8n/workflows/Email Marketing.png" alt="Email Follow-up & Nurture Automation" class="w-100 h-100 object-fit-cover" loading="lazy">
-                        <span class="badge rounded-pill px-3 py-1 position-absolute top-0 end-0 m-3 shadow fw-bold" style="font-size: 10px; background: #eab308; color: #000;">
+                        <span class="badge rounded-pill px-3 py-1 position-absolute top-0 end-0 m-3 shadow fw-bold" style="font-size: 10px; background: var(--bg-void); color: #000;">
                             <i class="fa-solid fa-envelope-open-text me-1"></i> Multi-Mailbox
                         </span>
                     </div>
@@ -461,10 +461,10 @@
 
             <!-- 4. Cold Outreach & Lead Recovery Automation -->
             <div class="col-lg-4 col-md-6">
-                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column service-grid-card" style="background: #0d1322; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div class="position-relative overflow-hidden" style="height: 190px; background: #070a12;">
+                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column service-grid-card" style="background: var(--bg-surface-1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 190px; background: var(--bg-surface-2);">
                         <img src="assets/media/n8n/workflows/n8n-email-marketing-workflow.png" alt="Cold Outreach & Lead Recovery" class="w-100 h-100 object-fit-cover" loading="lazy">
-                        <span class="badge rounded-pill px-3 py-1 position-absolute top-0 end-0 m-3 shadow fw-bold" style="font-size: 10px; background: #C8E019; color: #000;">
+                        <span class="badge rounded-pill px-3 py-1 position-absolute top-0 end-0 m-3 shadow fw-bold" style="font-size: 10px; background: var(--bg-void); color: #000;">
                             <i class="fa-solid fa-life-ring me-1"></i> &lt;60s Recovery
                         </span>
                     </div>
@@ -488,10 +488,10 @@
 
             <!-- 5. Knowledge-Base / Support Chatbot Agents -->
             <div class="col-lg-4 col-md-6">
-                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column service-grid-card" style="background: #0d1322; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div class="position-relative overflow-hidden" style="height: 190px; background: #070a12;">
+                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column service-grid-card" style="background: var(--bg-surface-1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 190px; background: var(--bg-surface-2);">
                         <img src="assets/img/services/ai_agents.jpg" alt="Knowledge-Base Support Chatbot Agents" class="w-100 h-100 object-fit-cover" loading="lazy">
-                        <span class="badge rounded-pill px-3 py-1 position-absolute top-0 end-0 m-3 shadow fw-bold" style="font-size: 10px; background: #a855f7; color: #fff;">
+                        <span class="badge rounded-pill px-3 py-1 position-absolute top-0 end-0 m-3 shadow fw-bold" style="font-size: 10px; background: var(--bg-void); color: #fff;">
                             <i class="fa-solid fa-robot me-1"></i> RAG Agents
                         </span>
                     </div>
@@ -515,10 +515,10 @@
 
             <!-- 6. Lead Scoring & Data Extraction Automation -->
             <div class="col-lg-4 col-md-6">
-                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column service-grid-card" style="background: #0d1322; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div class="position-relative overflow-hidden" style="height: 190px; background: #070a12;">
+                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column service-grid-card" style="background: var(--bg-surface-1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div class="position-relative overflow-hidden" style="height: 190px; background: var(--bg-surface-2);">
                         <img src="assets/media/n8n/workflows/workflow-02-real-estate-ai-agent.png" alt="Lead Scoring & Data Extraction" class="w-100 h-100 object-fit-cover" loading="lazy">
-                        <span class="badge rounded-pill px-3 py-1 position-absolute top-0 end-0 m-3 shadow fw-bold" style="font-size: 10px; background: #ef4444; color: #fff;">
+                        <span class="badge rounded-pill px-3 py-1 position-absolute top-0 end-0 m-3 shadow fw-bold" style="font-size: 10px; background: var(--bg-void); color: #fff;">
                             <i class="fa-solid fa-bullseye me-1"></i> AI Intent
                         </span>
                     </div>
@@ -554,7 +554,7 @@
 <!-- Services Section End -->
 
 <!-- AI Comparison Section Start -->
-<section class="py-5 bg-dark text-white border-top border-light-subtle">
+<section id="comparison-section" class="py-5 bg-dark text-white border-top border-light-subtle">
     <div class="container max-w-1000">
         <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".1s">
             <span class="badge rounded-pill border border-secondary text-light mb-3 px-3 py-2" style="background: rgba(255,255,255,0.05); letter-spacing: 1px;">CHOOSE YOUR SOLUTION</span>
@@ -565,7 +565,7 @@
         <div class="row g-4 align-items-stretch">
             <!-- AI Agents Column -->
             <div class="col-md-6 wow fadeInLeft" data-wow-delay=".2s">
-                <div class="p-4 p-md-5 h-100 rounded-4 d-flex flex-column" style="background: linear-gradient(145deg, #0B4550, #0B4550); border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
+                <div class="p-4 p-md-5 h-100 rounded-4 d-flex flex-column" style="background: var(--bg-surface-2); border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
                     <div class="d-flex align-items-center mb-4">
                         <div class="bg-brand-translucent text-accent-brand rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 56px; height: 56px; font-size: 24px;">
                             <i class="fa-solid fa-robot"></i>
@@ -585,7 +585,7 @@
 
             <!-- AI Automations Column -->
             <div class="col-md-6 wow fadeInRight" data-wow-delay=".3s">
-                <div class="p-4 p-md-5 h-100 rounded-4 d-flex flex-column" style="background: linear-gradient(145deg, #0B4550, #0B4550); border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
+                <div class="p-4 p-md-5 h-100 rounded-4 d-flex flex-column" style="background: var(--bg-surface-2); border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
                     <div class="d-flex align-items-center mb-4">
                         <div class="bg-brand-translucent text-accent-brand rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 56px; height: 56px; font-size: 24px;">
                             <i class="fa-solid fa-gears"></i>
@@ -610,7 +610,7 @@
 <!-- =========================================================================
      NOTABLE PROJECTS / PORTFOLIO SECTION (#portfolio-section)
      ========================================================================= -->
-<section id="portfolio-section" class="py-5 text-white position-relative overflow-hidden" style="background: #080a11; border-top: 1px solid rgba(255,255,255,0.06);">
+<section id="portfolio-section" class="py-5 text-white position-relative overflow-hidden" style="background: var(--bg-void); border-top: 1px solid rgba(255,255,255,0.06);">
     <!-- Ambient Atmospheric Glows -->
     <div class="position-absolute rounded-circle pointer-events-none" style="background: radial-gradient(circle, rgba(200, 224, 25, 0.12) 0%, rgba(0,0,0,0) 70%); width: 600px; height: 600px; top: 0; left: 10%; filter: blur(90px); z-index: 0;"></div>
     <div class="position-absolute rounded-circle pointer-events-none" style="background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(0,0,0,0) 70%); width: 500px; height: 500px; bottom: 0; right: 5%; filter: blur(85px); z-index: 0;"></div>
@@ -633,15 +633,15 @@
         <div class="row g-4 mb-5 justify-content-center">
             <!-- Project 1: Voice Calling Agent -->
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column" style="background: #0d1322; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
+                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column" style="background: var(--bg-surface-1); transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
                     <!-- Project Image with Floating Badge -->
-                    <div class="position-relative overflow-hidden" style="height: 230px; background: #070a12;">
+                    <div class="position-relative overflow-hidden" style="height: 230px; background: var(--bg-surface-2);">
                         <img src="assets/img/services/ai_agents.jpg" 
                              alt="Autonomous Calling Voice Bot" 
                              class="w-100 h-100 object-fit-cover" 
                              loading="lazy" 
                              style="transition: transform 0.4s ease;">
-                        <span class="badge rounded-pill px-3 py-1.5 position-absolute top-0 start-0 m-3 shadow" style="background: #ef4444; color: #ffffff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;">
+                        <span class="badge rounded-pill px-3 py-1.5 position-absolute top-0 start-0 m-3 shadow" style="background: var(--bg-void); color: var(--text-primary); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;">
                             <i class="fa-solid fa-microphone-lines me-1"></i> Conversational Voice
                         </span>
                     </div>
@@ -674,15 +674,15 @@
 
             <!-- Project 2: Automated Cold Email Outreach Engine -->
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column" style="background: #0d1322; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
+                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column" style="background: var(--bg-surface-1); transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
                     <!-- Project Image with Floating Badge -->
-                    <div class="position-relative overflow-hidden" style="height: 230px; background: #070a12;">
+                    <div class="position-relative overflow-hidden" style="height: 230px; background: var(--bg-surface-2);">
                         <img src="assets/media/n8n/workflows/n8n-email-marketing-workflow.png" 
                              alt="Automated Cold Email Engine" 
                              class="w-100 h-100 object-fit-cover" 
                              loading="lazy" 
                              style="transition: transform 0.4s ease;">
-                        <span class="badge rounded-pill px-3 py-1.5 position-absolute top-0 start-0 m-3 shadow" style="background: #059669; color: #ffffff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;">
+                        <span class="badge rounded-pill px-3 py-1.5 position-absolute top-0 start-0 m-3 shadow" style="background: var(--bg-void); color: var(--text-primary); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;">
                             <i class="fa-solid fa-diagram-project me-1"></i> n8n Enterprise Workflow
                         </span>
                     </div>
@@ -715,15 +715,15 @@
 
             <!-- Project 3: Real Estate Concierge -->
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column" style="background: #0d1322; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
+                <div class="card h-100 rounded-4 overflow-hidden border border-secondary border-opacity-25 d-flex flex-column" style="background: var(--bg-surface-1); transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
                     <!-- Project Image with Floating Badge -->
-                    <div class="position-relative overflow-hidden" style="height: 230px; background: #070a12;">
+                    <div class="position-relative overflow-hidden" style="height: 230px; background: var(--bg-surface-2);">
                         <img src="assets/media/n8n/workflows/workflow-02-real-estate-ai-agent.png" 
                              alt="Property Advisor - Real Estate Concierge" 
                              class="w-100 h-100 object-fit-cover" 
                              loading="lazy" 
                              style="transition: transform 0.4s ease;">
-                        <span class="badge rounded-pill px-3 py-1.5 position-absolute top-0 start-0 m-3 shadow" style="background: #059669; color: #ffffff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;">
+                        <span class="badge rounded-pill px-3 py-1.5 position-absolute top-0 start-0 m-3 shadow" style="background: var(--bg-void); color: var(--text-primary); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;">
                             <i class="fa-solid fa-building-columns me-1"></i> Real Estate Concierge
                         </span>
                     </div>
@@ -945,7 +945,7 @@
     justify-content: center;
     gap: 0.75rem;
     padding: 1.25rem 1.5rem;
-    background: #12141c;
+    background: var(--bg-void);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     min-width: 130px;
@@ -958,7 +958,7 @@
 
 .tech-card:hover {
     border-color: rgba(200, 224, 25, 0.4) !important;
-    background: #161924;
+    background: var(--bg-void);
     transform: translateY(-2px);
 }
 
@@ -980,7 +980,7 @@
 .tech-card span {
     font-size: 13px;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--text-primary);
     white-space: nowrap;
     letter-spacing: 0.2px;
     line-height: 1.2;
@@ -994,7 +994,7 @@
     <div class="container">
         <div class="p-4 p-md-4 rounded-4 text-center" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);">
             <div class="d-flex flex-wrap align-items-center justify-content-center gap-2 gap-md-4 mb-3">
-                <span class="badge rounded-pill px-3 py-1 text-dark fw-bold" style="background: #C8E019; font-size: 11px;">HOW WE WORK</span>
+                <span class="badge rounded-pill px-3 py-1 text-dark fw-bold" style="background: var(--bg-void); font-size: 11px;">HOW WE WORK</span>
                 <span class="text-white fw-bold fs-5 d-flex align-items-center gap-2">
                     <span>Audit</span> <i class="fa-solid fa-arrow-right text-accent-brand" style="font-size: 12px;"></i>
                     <span>Architecture</span> <i class="fa-solid fa-arrow-right text-accent-brand" style="font-size: 12px;"></i>

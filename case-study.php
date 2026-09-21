@@ -176,7 +176,7 @@ include 'header.php';
         </div>
 
         <!-- Workflow Visual Demo & Video Player Card -->
-        <div class="card rounded-4 overflow-hidden mb-5" style="background: #0d1322; border: 1px solid rgba(200, 224, 25, 0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+        <div class="card rounded-4 overflow-hidden mb-5" style="background: var(--bg-surface-1); border: 1px solid rgba(200, 224, 25, 0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
             <!-- Window Title Bar / Tab Bar -->
             <div class="px-4 py-3 border-bottom d-flex flex-wrap align-items-center justify-content-between gap-3" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07) !important;">
                 <div class="d-flex align-items-center gap-3">
@@ -193,7 +193,7 @@ include 'header.php';
                     <button type="button" class="btn btn-sm px-3 py-1.5 rounded-pill fw-semibold active case-study-tab-btn" id="csPageTabBtnArchitecture" onclick="switchCsPageTab('architecture')" style="font-size: 0.8rem; background: #C8E019; color: #000; border: 1px solid #C8E019;">
                         <i class="fa-solid fa-diagram-project me-1.5"></i> Workflow Blueprint
                     </button>
-                    <button type="button" class="btn btn-sm px-3 py-1.5 rounded-pill fw-semibold case-study-tab-btn" id="csPageTabBtnVideo" onclick="switchCsPageTab('video')" style="font-size: 0.8rem; background: rgba(255,255,255,0.05); color: #cbd5e1; border: 1px solid rgba(255,255,255,0.1);">
+                    <button type="button" class="btn btn-sm px-3 py-1.5 rounded-pill fw-semibold case-study-tab-btn" id="csPageTabBtnVideo" onclick="switchCsPageTab('video')" style="font-size: 0.8rem; background: rgba(255,255,255,0.05); color: var(--text-secondary); border: 1px solid rgba(255,255,255,0.1);">
                         <i class="fa-solid fa-circle-play me-1.5"></i> Video Walkthrough
                     </button>
                     <a href="https://screenrec.com/share/7SxeCZsImJ" target="_blank" rel="noopener noreferrer" class="btn btn-sm px-3 py-1.5 rounded-pill fw-semibold d-none d-md-inline-flex align-items-center gap-1 text-white" style="font-size: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
