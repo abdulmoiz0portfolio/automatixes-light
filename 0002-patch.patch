@@ -1,0 +1,98 @@
+From f275bcb8f46afb14f0a8be9ef3ef7a051fd3cfc2 Mon Sep 17 00:00:00 2001
+From: Baig Solution Fixes <moiz@baig-solution.local>
+Date: Thu, 13 Aug 2026 01:03:16 +0000
+Subject: [PATCH] Add benefits-themed physics toss section to About page
+ (brand-tinted pills)
+
+---
+ about.php         | 19 +++++++++++++++++++
+ assets/js/main.js | 22 +++++++++++++++++-----
+ 2 files changed, 36 insertions(+), 5 deletions(-)
+
+diff --git a/about.php b/about.php
+index 8dee8a0..cd7292c 100644
+--- a/about.php
++++ b/about.php
+@@ -101,6 +101,25 @@
+ </section>
+ <!-- Our Background & Expertise Section End -->
+ 
++<!-- Benefits Physics Section Start -->
++<section class="section toss-away" style="position: relative; overflow: hidden; padding: 0; background: #fdfdfd;">
++    <div class="container toss-away-container" style="position: absolute; top: 80px; left: 50%; transform: translateX(-50%); z-index: 99; pointer-events: none; width: 100%;">
++        <div class="row justify-content-center">
++            <div class="col-12 col-lg-8">
++                <div class="section__header text-center" style="margin-bottom: 0;">
++                    <h2 class="title title-anim toss-away-title" style="color: #222; font-size: 55px; font-weight: 800; line-height: 1.1; letter-spacing: -1px;">
++                        WHAT YOU ACTUALLY<br><span style="color: #444;">GET</span>
++                    </h2>
++                </div>
++            </div>
++        </div>
++    </div>
++    <div id="physics-container" class="physics-container" style="width: 100%; height: 600px; position: relative; cursor: grab; z-index: 1;" data-pill-tint="brand" data-pills='["Faster Lead Response", "24/7 Automated Support", "Fewer Manual Errors", "Real-Time Reporting", "Seamless CRM Sync", "More Qualified Leads", "Hours Saved Weekly", "Consistent Follow-Ups", "Scalable Operations", "Predictable Revenue Growth"]'>
++        <!-- Matter.js Canvas Injected Here -->
++    </div>
++</section>
++<!-- Benefits Physics Section End -->
++
+ <!-- FAQ Section Start -->
+ <section id="faq-section" class="section-padding bg-light-gray text-dark border-top border-light-subtle">
+     <div class="container max-w-800">
+diff --git a/assets/js/main.js b/assets/js/main.js
+index 1e5fe26..c535621 100644
+--- a/assets/js/main.js
++++ b/assets/js/main.js
+@@ -218,18 +218,30 @@ function initMatterJsPhysics() {
+     
+     Composite.add(world, [ground, leftWall, rightWall, topWall]);
+ 
+-    // Pill texts
+-    const pillTexts = [
++    // Pill texts — falls back to default pain-point set, or reads a custom
++    // JSON list from data-pills on the container (e.g. for benefit-themed sections)
++    const defaultPillTexts = [
+         "Slow Websites", "High Bounce Rates", "Manual Workflows",
+         "Lack of Brand Differentiation", "Lead Leakage", "Poor Conversion Rates",
+         "Inconsistent Branding", "Scaling Difficulties", "Outdated Technology",
+         "Hidden Operational Costs", "Technical Debt"
+     ];
++    let pillTexts = defaultPillTexts;
++    if (container.dataset.pills) {
++        try {
++            const parsed = JSON.parse(container.dataset.pills);
++            if (Array.isArray(parsed) && parsed.length) pillTexts = parsed;
++        } catch (e) {
++            console.warn("Invalid data-pills JSON, using defaults.", e);
++        }
++    }
+ 
+     const pills = [];
+     const isMobile = window.innerWidth < 768;
+     const displayPills = isMobile ? pillTexts.slice(0, 6) : pillTexts;
+ 
++    const pillTint = container.dataset.pillTint === "brand";
++
+     displayPills.forEach((text, i) => {
+         const el = document.createElement("div");
+         el.innerText = text;
+@@ -237,14 +249,14 @@ function initMatterJsPhysics() {
+         el.style.position = "absolute";
+         el.style.padding = isMobile ? "8px 16px" : "18px 45px";
+         el.style.borderRadius = "100px";
+-        el.style.color = "#333333";
++        el.style.color = pillTint ? "#a8541a" : "#333333";
+         el.style.fontSize = isMobile ? "11px" : "20px";
+         el.style.fontWeight = "500";
+         el.style.whiteSpace = "nowrap";
+         el.style.userSelect = "none";
+         el.style.pointerEvents = "none";
+-        el.style.background = "rgba(0, 0, 0, 0.05)";
+-        el.style.border = "1px solid rgba(0, 0, 0, 0.1)";
++        el.style.background = pillTint ? "rgba(231, 127, 35, 0.08)" : "rgba(0, 0, 0, 0.05)";
++        el.style.border = pillTint ? "1px solid rgba(231, 127, 35, 0.3)" : "1px solid rgba(0, 0, 0, 0.1)";
+         el.style.zIndex = "5";
+         el.style.willChange = "transform";
+ 
+-- 
+2.43.0

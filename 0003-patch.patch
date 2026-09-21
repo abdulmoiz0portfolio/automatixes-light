@@ -1,0 +1,24 @@
+From fdd0f6f552bd70736b6827ed69d495a63e073093 Mon Sep 17 00:00:00 2001
+From: Baig Solution Fixes <moiz@baig-solution.local>
+Date: Thu, 13 Aug 2026 01:04:32 +0000
+Subject: [PATCH] Update index toss-away section headline copy
+
+---
+ index.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/index.php b/index.php
+index b5633b8..cf09e88 100644
+--- a/index.php
++++ b/index.php
+@@ -129,7 +129,7 @@
+             <div class="col-12 col-lg-8">
+                 <div class="section__header text-center" style="margin-bottom: 0;">
+                     <h2 class="title title-anim toss-away-title" style="color: #222; font-size: 55px; font-weight: 800; line-height: 1.1; letter-spacing: -1px;">
+-                        TIME TO TOSS AWAY & SAY<br><span style="color: #444;">GOODBYE TO</span>
++                        SAY GOODBYE TO THESE<br><span style="color: #444;">BUSINESS HEADACHES</span>
+                     </h2>
+                 </div>
+             </div>
+-- 
+2.43.0

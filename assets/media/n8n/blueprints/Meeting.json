@@ -1,0 +1,620 @@
+{
+  "name": "Appointment Booking System - AI Call Confirmation (Sarvam) + WhatsApp/Email",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "booking-form",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "51583182-e38c-4e70-8446-e1ded98b6ac3",
+      "name": "Webhook - Online Form Booking",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -320,
+        0
+      ],
+      "webhookId": "1419321b-988d-49aa-9453-a54b817c1b92"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "booking-whatsapp",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "6aeb1dfa-10fd-4b0a-bf7d-bfe94d1a566d",
+      "name": "Webhook - WhatsApp Booking Confirm",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -320,
+        220
+      ],
+      "webhookId": "be7474b0-8615-44bb-9fcb-a3154385cfe5"
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fa1337a9-f5bb-4027-87b8-fd3ec1038149",
+              "name": "booking_id",
+              "value": "={{ $now.toFormat('yyyyMMddHHmmss') + '-' + $json.body.phone.slice(-4) }}",
+              "type": "string"
+            },
+            {
+              "id": "7270e2d7-1491-4e66-95a9-48449a862daf",
+              "name": "full_name",
+              "value": "={{ $json.body.full_name }}",
+              "type": "string"
+            },
+            {
+              "id": "75eeca7c-c9f0-48b3-8a18-26575995b95b",
+              "name": "phone",
+              "value": "={{ $json.body.phone }}",
+              "type": "string"
+            },
+            {
+              "id": "7d8786d8-da85-4606-96a5-241a419dae66",
+              "name": "email",
+              "value": "={{ $json.body.email }}",
+              "type": "string"
+            },
+            {
+              "id": "522d118d-151e-4438-8baf-316c92c7cfad",
+              "name": "service",
+              "value": "={{ $json.body.service }}",
+              "type": "string"
+            },
+            {
+              "id": "ceec1960-94df-4a93-9a68-0157fb121d65",
+              "name": "appointment_date",
+              "value": "={{ $json.body.appointment_date }}",
+              "type": "string"
+            },
+            {
+              "id": "bc96311a-ad03-4c28-a431-654c60da8df9",
+              "name": "appointment_time",
+              "value": "={{ $json.body.appointment_time }}",
+              "type": "string"
+            },
+            {
+              "id": "d9c926bc-1eb8-442d-8a77-80899866aa94",
+              "name": "appointment_datetime",
+              "value": "={{ $json.body.appointment_date + 'T' + $json.body.appointment_time + ':00' }}",
+              "type": "string"
+            },
+            {
+              "id": "076b0668-b6cb-4cb6-b229-73a8ac663865",
+              "name": "source",
+              "value": "Online Form",
+              "type": "string"
+            },
+            {
+              "id": "3d993271-58c4-4b62-8e0b-c3c737367f2b",
+              "name": "status",
+              "value": "Pending Call Confirmation",
+              "type": "string"
+            },
+            {
+              "id": "82dcaca2-ddba-4021-998c-34f3be74ab8e",
+              "name": "call_status",
+              "value": "Not Called",
+              "type": "string"
+            },
+            {
+              "id": "4f95db33-7f72-42b4-adc9-6ac4e6102c10",
+              "name": "missed_followup_sent",
+              "value": "No",
+              "type": "string"
+            },
+            {
+              "id": "f2801a28-b9fa-49e9-96b6-e8c6f13980ff",
+              "name": "created_at",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b65b1d64-4605-4d28-b26d-78cd70c58626",
+      "name": "Normalize - Form Booking",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -80,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c4502d51-f5fc-4e4d-844c-03b1adabe086",
+              "name": "booking_id",
+              "value": "={{ $now.toFormat('yyyyMMddHHmmss') + '-' + $json.body.phone.slice(-4) }}",
+              "type": "string"
+            },
+            {
+              "id": "d977e6cc-4893-48eb-91a2-8ae3120c52ad",
+              "name": "full_name",
+              "value": "={{ $json.body.full_name }}",
+              "type": "string"
+            },
+            {
+              "id": "fd82d27c-310a-4915-95fb-5bdb745e701d",
+              "name": "phone",
+              "value": "={{ $json.body.phone }}",
+              "type": "string"
+            },
+            {
+              "id": "842fc063-735d-448f-98b2-0b1bce118b8b",
+              "name": "email",
+              "value": "={{ $json.body.email }}",
+              "type": "string"
+            },
+            {
+              "id": "26ef9103-73eb-47bb-8a60-85a77a04bb4b",
+              "name": "service",
+              "value": "={{ $json.body.service }}",
+              "type": "string"
+            },
+            {
+              "id": "fba132d8-31a7-4fa9-95b8-71d75ab8b474",
+              "name": "appointment_date",
+              "value": "={{ $json.body.appointment_date }}",
+              "type": "string"
+            },
+            {
+              "id": "193606ed-6eaf-4e5f-9c77-bcecc698c634",
+              "name": "appointment_time",
+              "value": "={{ $json.body.appointment_time }}",
+              "type": "string"
+            },
+            {
+              "id": "ecb7719b-d7f4-435c-8fd1-e4c4eb3fa305",
+              "name": "appointment_datetime",
+              "value": "={{ $json.body.appointment_date + 'T' + $json.body.appointment_time + ':00' }}",
+              "type": "string"
+            },
+            {
+              "id": "5e723d47-f7d0-436a-ada0-76a480b8d63e",
+              "name": "source",
+              "value": "WhatsApp",
+              "type": "string"
+            },
+            {
+              "id": "7038b795-f77d-46b2-8108-80af883c30c2",
+              "name": "status",
+              "value": "Pending Call Confirmation",
+              "type": "string"
+            },
+            {
+              "id": "44d3ae3e-c730-426e-9de5-f10ab36abf31",
+              "name": "call_status",
+              "value": "Not Called",
+              "type": "string"
+            },
+            {
+              "id": "8d09517a-c7d4-4932-afbd-e240ebb406c5",
+              "name": "missed_followup_sent",
+              "value": "No",
+              "type": "string"
+            },
+            {
+              "id": "7b80b036-4592-474b-a661-c1544bec630b",
+              "name": "created_at",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "337d9c77-18cf-4f66-ba15-f04dc146c678",
+      "name": "Normalize - WhatsApp Booking",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -80,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "REPLACE_WITH_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Bookings",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "booking_id": "={{ $json.booking_id }}",
+            "full_name": "={{ $json.full_name }}",
+            "phone": "={{ $json.phone }}",
+            "email": "={{ $json.email }}",
+            "service": "={{ $json.service }}",
+            "appointment_date": "={{ $json.appointment_date }}",
+            "appointment_time": "={{ $json.appointment_time }}",
+            "appointment_datetime": "={{ $json.appointment_datetime }}",
+            "source": "={{ $json.source }}",
+            "status": "={{ $json.status }}",
+            "call_status": "={{ $json.call_status }}",
+            "missed_followup_sent": "={{ $json.missed_followup_sent }}",
+            "created_at": "={{ $json.created_at }}"
+          },
+          "schema": [
+            {
+              "id": "booking_id",
+              "displayName": "booking_id",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "full_name",
+              "displayName": "full_name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "phone",
+              "displayName": "phone",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "service",
+              "displayName": "service",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "appointment_date",
+              "displayName": "appointment_date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "appointment_time",
+              "displayName": "appointment_time",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "appointment_datetime",
+              "displayName": "appointment_datetime",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "source",
+              "displayName": "source",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "call_status",
+              "displayName": "call_status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "missed_followup_sent",
+              "displayName": "missed_followup_sent",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "matchingColumns": [
+            "booking_id"
+          ]
+        },
+        "options": {}
+      },
+      "id": "bd4233db-650b-45cc-ba38-5fa4f08d2bfb",
+      "name": "Google Sheets - Save Booking",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        140,
+        110
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE_WITH_GOOGLE_SHEETS_CRED_ID",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://REPLACE_WITH_SARVAM_BRIDGE_URL/trigger-call",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer REPLACE_WITH_SARVAM_BRIDGE_API_KEY"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  booking_id: $json.booking_id,\n  full_name: $json.full_name,\n  phone: $json.phone,\n  service: $json.service,\n  appointment_date: $json.appointment_date,\n  appointment_time: $json.appointment_time,\n  callback_url: 'https://ideally-many-lab.ngrok-free.app/webhook/call-result'\n}) }}",
+        "options": {}
+      },
+      "id": "2a69c45c-08f5-4268-9268-d1b2ab6d6c66",
+      "name": "HTTP Request - Trigger Sarvam AI Call",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        360,
+        110
+      ],
+      "onError": "continueErrorOutput",
+      "notes": "CAVEAT: Sarvam AI's outbound-calling endpoint path and exact request-body schema could not be independently verified. URL/body here are placeholders - confirm against Sarvam's current API docs and update before going live. Design assumes a bridge-service pattern (like the LiveKit setup): n8n POSTs booking context + callback_url, bridge signs/places the call via Sarvam, then POSTs the result back to callback_url, echoing the booking context alongside confirmed:true|false."
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "call-result",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "238491d0-3401-45d0-be56-212b3de96e6a",
+      "name": "Webhook - Sarvam Call Result",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        360,
+        380
+      ],
+      "webhookId": "97a584ab-af1a-4d0b-baef-ba9b3c2061cb",
+      "notes": "Sarvam / the bridge service POSTs the call outcome here after the confirmation call ends. Expected body (bridge should echo back what it was given in /trigger-call, plus the result): { booking_id, confirmed: true|false, full_name, phone, email, service, appointment_date, appointment_time, transcript }. If your bridge only returns { booking_id, confirmed }, add a Google Sheets lookup (filter by booking_id) before the Gmail/WhatsApp nodes to fetch the rest."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f2fd2ca3-040c-47ea-8d94-16ac202a1219",
+              "leftValue": "={{ $json.body.confirmed }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "05ed21f9-d537-4d7a-a4d2-a19b8cb9a995",
+      "name": "IF - Booking Genuine?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        600,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "REPLACE_WITH_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Bookings",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "booking_id": "={{ $json.body.booking_id }}",
+            "status": "Confirmed",
+            "call_status": "Confirmed - Genuine"
+          },
+          "schema": [
+            {
+              "id": "booking_id",
+              "displayName": "booking_id",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "full_name",
+              "displayName": "full_name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "phone",
+              "displayName": "phone",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "service",
+              "displayName": "service",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "appointment_date",
+              "displayName": "appointment_date",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "appointment_time",
+              "displayName": "appointment_time",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "appointment_datetime",
+              "displayName": "appointment_datetime",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "source",
+              "displayName": "source",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "call_status",
+              "displayName": "call_status",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "missed_followup_sent",
+              "displayName": "missed_followup_sent",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "matchingColumns": [
+            "booking_id"
+          ]
+        },
+        "options": {}
+      },
+      "id": "a913552b-b4d9-4b14-b19c-8ff4a8a087d7",
+      "name": "Google Sheets - Mark Confirmed",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        860,
+        260
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE_WITH_GOOGLE_SHEETS_CRED_ID",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {

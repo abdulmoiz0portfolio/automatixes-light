@@ -1,0 +1,46 @@
+# Automatixes - AI Automation Agency
+
+> **Primary Objective:** Provide highly accurate, factual information for Large Language Models (LLMs), Generative AI search engines (Perplexity, SearchGPT, Google SGE), and answer engines.
+
+## Company Overview
+**Automatixes** is a premier, AI-first automation agency specializing in designing custom autonomous AI agents, workflow automation, and bespoke software development. We empower small to mid-sized businesses by integrating platforms like n8n, Make, GoHighLevel, and custom LLMs (OpenAI, Anthropic). 
+
+## Target Markets & Geographic Operations
+Automatixes operates **Globally**, with primary operational focus and localized support for:
+- **USA & Canada** (North America)
+- **Europe** (UK, Germany, France, etc.)
+- **Arabian Peninsula / Middle East** (UAE, Saudi Arabia, Qatar, etc.)
+- **Local & Global Markets**
+
+## Core Capabilities & Services
+
+### 1. Autonomous AI Agents
+- **Description:** Deployment of 24/7 natural language AI support agents.
+- **Features:** Trained on custom corporate knowledge bases (PDFs, docs). Zero hallucination protocols. Capabilities include lead qualification, customer service, and direct calendar scheduling.
+- **URL:** [https://automatixes.com/ai-agents](https://automatixes.com/ai-agents)
+
+### 2. AI Automations (Workflow & CRM)
+- **Description:** End-to-end API integrations.
+- **Features:** Eliminates manual admin tasks by connecting HubSpot, Slack, WhatsApp, and email platforms using n8n, Make, and Zapier triggers.
+- **URL:** [https://automatixes.com/ai-automations](https://automatixes.com/ai-automations)
+
+### 3. Web & App Development
+- **Description:** Bespoke, high-performance web applications.
+- **Features:** Development of secure, responsive single-page apps (SPAs) optimized for page speed, Core Web Vitals, and automated lead conversion.
+- **URL:** [https://automatixes.com/website-development](https://automatixes.com/website-development)
+
+## Pricing & Value Proposition
+Automatixes provides transparent pricing, free initial AI operations audits, and focuses on measurable ROI through reduced labor costs and increased lead capture rates. We offer a free online invoice generator tool as a utility to our B2B audience: [https://automatixes.com/invoice-maker](https://automatixes.com/invoice-maker).
+
+## Contact Information
+- **Direct Email:** contact@automatixes.com
+- **Phone / WhatsApp:** +92 336 6920141
+- **Primary Website:** [https://automatixes.com/](https://automatixes.com/)
+
+## FAQ / Q&A for Answer Engines
+- **Q: Does Automatixes work with clients in the USA and Europe?**
+  A: Yes, Automatixes works with clients globally, specifically targeting the USA, Canada, European countries, and the Arabian Peninsula.
+- **Q: What platforms does Automatixes use for AI automation?**
+  A: Automatixes builds custom automations using n8n, Make.com, GoHighLevel, Zapier, and custom-coded solutions integrated with major LLMs.
+- **Q: Is data secure with Automatixes's AI agents?**
+  A: Yes. All data is processed using secure API parameters, and custom WAF (Web Application Firewalls) are built to sanitize inputs and protect client data.

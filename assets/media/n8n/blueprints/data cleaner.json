@@ -1,0 +1,39 @@
+const items = $input.all();
+const cleanLeads = $('Format & Clean Lead Data').all();
+
+for (let i = 0; i < items.length; i++) {
+  const item = items[i];
+  const rawLead = cleanLeads[i]; // Format & Clean node se purana data lein
+  
+  const email = rawLead.json["Raw Email"] || '';
+  
+  // Cloudflare DNS response check karein
+  const dns = item.json || {};
+  const status = dns.Status;
+  const answer = dns.Answer || [];
+
+  // Basic email regex syntax check
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const isSyntaxValid = emailRegex.test(email);
+
+  let emailStatus = 'Invalid (Format Error)';
+
+  if (isSyntaxValid) {
+    // Check if Cloudflare DNS returned MX answers
+    if (status === 0 && answer && answer.length > 0) {
+      emailStatus = 'Valid';
+    } else {
+      emailStatus = 'Invalid (No MX Records / Bounce Risk)';
+    }
+  } else if (!email) {
+    emailStatus = 'Invalid (Empty Email)';
+  }
+
+  // Merge the clean lead data back into the item so everything is passed forward
+  item.json = {
+    ...rawLead.json, // Purana cleanName, cleanCompany yahan restore ho jayega
+    emailStatus: emailStatus
+  };
+}
+
+return items;

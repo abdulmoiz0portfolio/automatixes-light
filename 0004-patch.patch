@@ -1,0 +1,93 @@
+From 53f11a4493cb57fec7d942fe3bbb918fbd0887f0 Mon Sep 17 00:00:00 2001
+From: Baig Solution Fixes <moiz@baig-solution.local>
+Date: Thu, 13 Aug 2026 01:10:03 +0000
+Subject: [PATCH] Add rel=noopener to external case-study links; fix
+ technically incoherent Firestore/WAF FAQ wording on index and about pages
+
+---
+ about.php |  4 ++--
+ index.php | 12 ++++++------
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/about.php b/about.php
+index cd7292c..3fe60ef 100644
+--- a/about.php
++++ b/about.php
+@@ -152,7 +152,7 @@
+                 </h2>
+                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                     <div class="accordion-body text-muted py-3">
+-                        Yes, absolutely. We integrate Firebase Firestore directly using secure client SDK parameters and build WAF (Web Application Firewalls) in PHP to sanitize inputs and block bots.
++                        Yes. Your data is protected by strict Firestore security rules that control exactly who can read or write it, and all form submissions are validated and sanitized server-side to block spam and malicious input.
+                     </div>
+                 </div>
+             </div>
+@@ -191,7 +191,7 @@
+     "name": "Are my client leads and databases secure with your setup?",
+     "acceptedAnswer": {
+       "@type": "Answer",
+-      "text": "Yes, absolutely. We integrate Firebase Firestore directly using secure client SDK parameters and build WAF (Web Application Firewalls) in PHP to sanitize inputs and block bots."
++      "text": "Yes. Your data is protected by strict Firestore security rules that control exactly who can read or write it, and all form submissions are validated and sanitized server-side to block spam and malicious input."
+     }
+   },{
+     "@type": "Question",
+diff --git a/index.php b/index.php
+index cf09e88..0474ec2 100644
+--- a/index.php
++++ b/index.php
+@@ -465,7 +465,7 @@
+                         </div>
+                         
+                         <!-- Overlay for click -->
+-                        <a href="https://bminternational.com.pk/" target="_blank" class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center text-decoration-none">
++                        <a href="https://bminternational.com.pk/" target="_blank" rel="noopener noreferrer" class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center text-decoration-none">
+                             <span class="btn btn-brand px-4 py-2 shadow-lg fw-bold border-0">
+                                 Open Website <i class="fa-solid fa-arrow-up-right ms-2"></i>
+                             </span>
+@@ -477,7 +477,7 @@
+                             <span class="badge bg-light text-dark border py-2 px-3 font-monospace rounded-pill">Textile Export</span>
+                         </div>
+                         <p class="text-secondary mb-4 fs-6">A comprehensive B2B textile sourcing and garment manufacturing platform. Built with modern web technologies to handle international export operations, quality control, and global logistics networking.</p>
+-                        <a href="https://bminternational.com.pk/" target="_blank" class="text-accent-brand fw-bold text-decoration-none small text-uppercase" style="letter-spacing: 1px;">Visit Live Site <i class="fa-solid fa-angle-right ms-1"></i></a>
++                        <a href="https://bminternational.com.pk/" target="_blank" rel="noopener noreferrer" class="text-accent-brand fw-bold text-decoration-none small text-uppercase" style="letter-spacing: 1px;">Visit Live Site <i class="fa-solid fa-angle-right ms-1"></i></a>
+                     </div>
+                 </div>
+             </div>
+@@ -492,7 +492,7 @@
+                         </div>
+                         
+                         <!-- Overlay for click -->
+-                        <a href="https://www.northbridgedatasolutions.com/" target="_blank" class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center text-decoration-none">
++                        <a href="https://www.northbridgedatasolutions.com/" target="_blank" rel="noopener noreferrer" class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center text-decoration-none">
+                             <span class="btn btn-brand px-4 py-2 shadow-lg fw-bold border-0">
+                                 Open Website <i class="fa-solid fa-arrow-up-right ms-2"></i>
+                             </span>
+@@ -504,7 +504,7 @@
+                             <span class="badge bg-light text-dark border py-2 px-3 font-monospace rounded-pill">AI Agency</span>
+                         </div>
+                         <p class="text-secondary mb-4 fs-6">An agency platform delivering high-converting custom web stores, AI chatbots, graphics design, and LinkedIn outreach solutions. Engineered to scale business growth through data-driven digital strategies.</p>
+-                        <a href="https://www.northbridgedatasolutions.com/" target="_blank" class="text-accent-brand fw-bold text-decoration-none small text-uppercase" style="letter-spacing: 1px;">Visit Live Site <i class="fa-solid fa-angle-right ms-1"></i></a>
++                        <a href="https://www.northbridgedatasolutions.com/" target="_blank" rel="noopener noreferrer" class="text-accent-brand fw-bold text-decoration-none small text-uppercase" style="letter-spacing: 1px;">Visit Live Site <i class="fa-solid fa-angle-right ms-1"></i></a>
+                     </div>
+                 </div>
+             </div>
+@@ -588,7 +588,7 @@
+                 </h2>
+                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                     <div class="accordion-body text-muted py-3">
+-                        Yes, absolutely. We integrate Firebase Firestore directly using secure client SDK parameters and build WAF (Web Application Firewalls) in PHP to sanitize inputs and block bots.
++                        Yes. Your data is protected by strict Firestore security rules that control exactly who can read or write it, and all form submissions are validated and sanitized server-side to block spam and malicious input.
+                     </div>
+                 </div>
+             </div>
+@@ -706,7 +706,7 @@
+     "name": "Are my client leads and databases secure with your setup?",
+     "acceptedAnswer": {
+       "@type": "Answer",
+-      "text": "Yes, absolutely. We integrate Firebase Firestore directly using secure client SDK parameters and build WAF (Web Application Firewalls) in PHP to sanitize inputs and block bots."
++      "text": "Yes. Your data is protected by strict Firestore security rules that control exactly who can read or write it, and all form submissions are validated and sanitized server-side to block spam and malicious input."
+     }
+   },{
+     "@type": "Question",
+-- 
+2.43.0

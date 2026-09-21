@@ -1,0 +1,168 @@
+From 60c3056935e7a7238513bb3acaf85bc35fad7c4c Mon Sep 17 00:00:00 2001
+From: Baig Solution Fixes <moiz@baig-solution.local>
+Date: Thu, 13 Aug 2026 01:20:53 +0000
+Subject: [PATCH] Fix Vercel router blocking robots.txt/sitemap.xml/llms.txt
+ (404); fix unowned baigsolution.com domain references site-wide
+
+---
+ header.php                  |  2 +-
+ llms.txt                    | 20 ++++++++++----------
+ robots.txt                  |  2 +-
+ sitemap.xml                 | 14 +++++++-------
+ tests/test-invoice-maker.js |  2 +-
+ vercel.json                 | 12 ++++++++++++
+ 6 files changed, 32 insertions(+), 20 deletions(-)
+
+diff --git a/header.php b/header.php
+index 3429303..6189737 100644
+--- a/header.php
++++ b/header.php
+@@ -75,7 +75,7 @@ $meta_config = [
+ ];
+ 
+ $active_meta = isset($meta_config[$page_key]) ? $meta_config[$page_key] : $meta_config['index'];
+-$host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'baigsolution.com';
++$host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'baig-solution.vercel.app';
+ $forwarded_proto = isset($_SERVER['HTTP_X_FORWARDED_PROTO']) ? strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) : '';
+ $protocol = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') || $forwarded_proto === 'https') ? "https" : "http";
+ $canonical_url = "{$protocol}://{$host}/" . $active_meta['url'];
+diff --git a/llms.txt b/llms.txt
+index a17b9ce..349c22f 100644
+--- a/llms.txt
++++ b/llms.txt
+@@ -1,22 +1,22 @@
+ # Baig Solution
+ 
+-Baig Solution is an AI automation agency headquartered in New Jersey (NJ, USA). We help small and mid-sized businesses automate operations, scale lead follow-up, coordinate CRM systems, and build custom AI support agents.
++Baig Solution is an AI automation agency that helps small and mid-sized businesses automate operations, scale lead follow-up, coordinate CRM systems, and build custom AI support agents. We work remotely with clients globally.
+ 
+ ## Core Services
+ 
+-- **Autonomous AI Agents** (https://baigsolution.com/ai-agents): Deploy custom AI assistants trained on internal PDFs/docs to handle customer support, pre-screen leads, and schedule calendar appointments 24/7.
+-- **AI Automations** (https://baigsolution.com/ai-automations): Build end-to-end API integrations and workflow automation systems using n8n, Make, and GoHighLevel.
+-- **Web & App Development** (https://baigsolution.com/website-development): High-performance, lightweight web applications and custom single-page apps optimized for page speed and conversion.
+-- **Product Shoot** (https://baigsolution.com/product-shoot): Commercial product photography and studio shoots for e-commerce visuals.
++- **Autonomous AI Agents** (https://baig-solution.vercel.app/ai-agents): Deploy custom AI assistants trained on internal PDFs/docs to handle customer support, pre-screen leads, and schedule calendar appointments 24/7.
++- **AI Automations** (https://baig-solution.vercel.app/ai-automations): Build end-to-end API integrations and workflow automation systems using n8n, Make, and GoHighLevel.
++- **Web & App Development** (https://baig-solution.vercel.app/website-development): High-performance, lightweight web applications and custom single-page apps optimized for page speed and conversion.
++- **Product Shoot** (https://baig-solution.vercel.app/product-shoot): Commercial product photography and studio shoots for e-commerce visuals.
+ 
+ ## Contact Information
+ 
+-- **Email:** info@baigsolution.com
++- **Email:** bobrober2323@gmail.com
+ - **Phone:** +92 336 6920141
+-- **HQ Area served:** New Jersey, NJ, USA (serving global remote clients)
++- **Area served:** Worldwide (remote agency)
+ 
+ ## Sitemap
+ 
+-- Homepage: https://baigsolution.com/
+-- About Us: https://baigsolution.com/about
+-- Contact Us: https://baigsolution.com/contact
++- Homepage: https://baig-solution.vercel.app/
++- About Us: https://baig-solution.vercel.app/about
++- Contact Us: https://baig-solution.vercel.app/contact
+diff --git a/robots.txt b/robots.txt
+index c0851dc..85d8a30 100644
+--- a/robots.txt
++++ b/robots.txt
+@@ -29,4 +29,4 @@ Allow: /
+ Disallow: /admin.php
+ Disallow: /admin
+ 
+-Sitemap: https://baigsolution.com/sitemap.xml
++Sitemap: https://baig-solution.vercel.app/sitemap.xml
+diff --git a/sitemap.xml b/sitemap.xml
+index 32e2ec1..5c3b79e 100644
+--- a/sitemap.xml
++++ b/sitemap.xml
+@@ -1,43 +1,43 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+     <url>
+-        <loc>https://baigsolution.com/</loc>
++        <loc>https://baig-solution.vercel.app/</loc>
+         <lastmod>2026-08-01</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>1.0</priority>
+     </url>
+     <url>
+-        <loc>https://baigsolution.com/about</loc>
++        <loc>https://baig-solution.vercel.app/about</loc>
+         <lastmod>2026-08-01</lastmod>
+         <changefreq>monthly</changefreq>
+         <priority>0.8</priority>
+     </url>
+     <url>
+-        <loc>https://baigsolution.com/ai-agents</loc>
++        <loc>https://baig-solution.vercel.app/ai-agents</loc>
+         <lastmod>2026-08-01</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>0.9</priority>
+     </url>
+     <url>
+-        <loc>https://baigsolution.com/ai-automations</loc>
++        <loc>https://baig-solution.vercel.app/ai-automations</loc>
+         <lastmod>2026-08-01</lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>0.9</priority>
+     </url>
+     <url>
+-        <loc>https://baigsolution.com/website-development</loc>
++        <loc>https://baig-solution.vercel.app/website-development</loc>
+         <lastmod>2026-08-01</lastmod>
+         <changefreq>monthly</changefreq>
+         <priority>0.7</priority>
+     </url>
+     <url>
+-        <loc>https://baigsolution.com/product-shoot</loc>
++        <loc>https://baig-solution.vercel.app/product-shoot</loc>
+         <lastmod>2026-08-01</lastmod>
+         <changefreq>monthly</changefreq>
+         <priority>0.6</priority>
+     </url>
+     <url>
+-        <loc>https://baigsolution.com/contact</loc>
++        <loc>https://baig-solution.vercel.app/contact</loc>
+         <lastmod>2026-08-01</lastmod>
+         <changefreq>monthly</changefreq>
+         <priority>0.8</priority>
+diff --git a/tests/test-invoice-maker.js b/tests/test-invoice-maker.js
+index 8705963..a08c6f8 100644
+--- a/tests/test-invoice-maker.js
++++ b/tests/test-invoice-maker.js
+@@ -68,7 +68,7 @@ const http = require('http');
+ 
+         console.log(`Pre-filled Company Info: Name="${companyName}", Email="${companyEmail}", Phone="${companyPhone}", Address="${companyAddress}", Web="${companyWebsite}"`);
+ 
+-        if (companyName !== 'Baig Solution' || companyEmail !== 'bobrober2323@gmail.com' || companyPhone !== '+92 336 6920141' || !companyAddress.includes('Worldwide') || companyWebsite !== 'https://baigsolution.com') {
++        if (companyName !== 'Baig Solution' || companyEmail !== 'bobrober2323@gmail.com' || companyPhone !== '+92 336 6920141' || !companyAddress.includes('Worldwide') || companyWebsite !== 'https://baig-solution.vercel.app') {
+             throw new Error('Pre-filled company details do not match expected Baig Solution info.');
+         }
+         console.log('✅ 3. Vue 3 instance mounted & pre-filled company details verified.');
+diff --git a/vercel.json b/vercel.json
+index 8d87c97..e52bca8 100644
+--- a/vercel.json
++++ b/vercel.json
+@@ -9,6 +9,18 @@
+       "src": "/assets/(.*)",
+       "dest": "/assets/$1"
+     },
++    {
++      "src": "/robots.txt",
++      "dest": "/robots.txt"
++    },
++    {
++      "src": "/sitemap.xml",
++      "dest": "/sitemap.xml"
++    },
++    {
++      "src": "/llms.txt",
++      "dest": "/llms.txt"
++    },
+     {
+       "src": "/(.*)",
+       "dest": "/api/index.php"
+-- 
+2.43.0

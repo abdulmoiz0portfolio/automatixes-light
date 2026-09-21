@@ -1,0 +1,14 @@
+{
+  "name": "automatixes",
+  "version": "1.0.0",
+  "description": "Website for Automatixes using PHP-compatible layouts, Bootstrap, GSAP, Three.js, Matter.js, Firebase and n8n",
+  "main": "dev-server.js",
+  "scripts": {
+    "start": "node dev-server.js",
+    "dev": "node dev-server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}

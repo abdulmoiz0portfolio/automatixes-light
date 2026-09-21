@@ -1,0 +1,359 @@
+{
+  "totalMutations": 17,
+  "detectedMutations": 14,
+  "detectionRate": "82.4%",
+  "mutationResults": [
+    {
+      "id": "MUT-CSS-01",
+      "category": "Tokens",
+      "description": "Remove --bg-void declaration entirely",
+      "targetFile": "assets/css/main.css",
+      "expectedFailingTests": [
+        "T1-F1-01"
+      ],
+      "detectedFailingTests": [
+        "T1-F1-01"
+      ],
+      "exitCode": 1,
+      "passed": true,
+      "durationMs": 409.9518
+    },
+    {
+      "id": "MUT-CSS-02",
+      "category": "Tokens",
+      "description": "Corrupt --bg-void color to invalid hex #123456",
+      "targetFile": "assets/css/main.css",
+      "expectedFailingTests": [
+        "T1-F1-01"
+      ],
+      "detectedFailingTests": [
+        "T1-F1-01"
+      ],
+      "exitCode": 1,
+      "passed": true,
+      "durationMs": 835.0694
+    },
+    {
+      "id": "MUT-CSS-03",
+      "category": "Tokens",
+      "description": "Corrupt --accent-neon to purple #ff00ff",
+      "targetFile": "assets/css/main.css",
+      "expectedFailingTests": [
+        "T1-F1-03"
+      ],
+      "detectedFailingTests": [
+        "T1-F1-03"
+      ],
+      "exitCode": 1,
+      "passed": true,
+      "durationMs": 634.1028
+    },
+    {
+      "id": "MUT-CSS-04",
+      "category": "Tokens",
+      "description": "Reintroduce legacy teal #0B4550 to --bg-base",
+      "targetFile": "assets/css/main.css",
+      "expectedFailingTests": [
+        "T1-F1-05"
+      ],
+      "detectedFailingTests": [
+        "T1-F1-05"
+      ],
+      "exitCode": 1,
+      "passed": true,
+      "durationMs": 831.1515
+    },
+    {
+      "id": "MUT-CSS-05",
+      "category": "Tokens",
+      "description": "Remove --text-primary token definition",
+      "targetFile": "assets/css/main.css",
+      "expectedFailingTests": [
+        "T1-F1-04"
+      ],
+      "detectedFailingTests": [
+        "T1-F1-04"
+      ],
+      "exitCode": 1,
+      "passed": true,
+      "durationMs": 546.3239
+    },
+    {
+      "id": "MUT-CLAMP-01",
+      "category": "Clamp",
+      "description": "Remove --font-hero token definition completely",
+      "targetFile": "assets/css/main.css",
+      "expectedFailingTests": [
+        "T1-F2-03"
+      ],
+      "detectedFailingTests": [
+        "T1-F2-03"
+      ],
+      "exitCode": 1,
+      "passed": true,
+      "durationMs": 439.9205
+    },
+    {
+      "id": "MUT-CLAMP-02",
+      "category": "Clamp",
+      "description": "Corrupt --font-hero min bound from 3.75rem to tiny 1.25rem",
+      "targetFile": "assets/css/main.css",
+      "expectedFailingTests": [
+        "T1-F2-03"
+      ],
+      "detectedFailingTests": [
+        "T1-F2-03"
+      ],
+      "exitCode": 1,
+      "passed": true,
+      "durationMs": 466.171
+    },
+    {
+      "id": "MUT-CLAMP-03",
+      "category": "Clamp",
+      "description": "Corrupt --font-hero max bound from 9.5rem to restrictive 4.5rem",
+      "targetFile": "assets/css/main.css",
+      "expectedFailingTests": [
+        "T1-F2-03"
+      ],
+      "detectedFailingTests": [
+        "T1-F2-03"
+      ],
+      "exitCode": 1,
+      "passed": true,
+      "durationMs": 524.3906
+    },
+    {
+      "id": "MUT-CLAMP-04",
+      "category": "Clamp",
+      "description": "Replace --section-space clamp with static 100px value",
+      "targetFile": "assets/css/main.css",
+      "expectedFailingTests": [
+        "T1-F3-01"
+      ],
+      "detectedFailingTests": [
+        "T1-F3-01"
+      ],
+      "exitCode": 1,
+      "passed": true,
+      "durationMs": 732.8941
+    },
+    {
+      "id": "MUT-CLAMP-05",
+      "category": "Clamp",
+      "description": "Corrupt --section-space max bound to extreme 350px (>260px ceiling violation)",
+      "targetFile": "assets/css/main.css",
+      "expectedFailingTests": [
+        "T1-F3-01",
+        "T2-F3-02"
+      ],
+      "detectedFailingTests": [
+        "T1-F3-01",
+        "T2-F3-02"
+      ],
+      "exitCode": 1,
+      "passed": true,
+      "durationMs": 889.0509
+    },
+    {
+      "id": "MUT-SHELL-01",
+      "category": "Shell",
+      "description": "Remove Space Grotesk Google Font link from header.php",
+      "targetFile": "header.php",
+      "expectedFailingTests": [
+        "T1-F2-01"
+      ],
+      "detectedFailingTests": [],
+      "exitCode": 1,
+      "passed": false,
+      "durationMs": 700.6566
+    },
+    {
+      "id": "MUT-SHELL-02",
+      "category": "Shell",
+      "description": "Remove cursor DOM elements (.cursor-outer, .cursor-inner) from header.php",
+      "targetFile": "header.php",
+      "expectedFailingTests": [
+        "T1-F8-01"
+      ],
+      "detectedFailingTests": [],
+      "exitCode": 1,
+      "passed": false,
+      "durationMs": 492.9439
+    },
+    {
+      "id": "MUT-SHELL-03",
+      "category": "Shell",
+      "description": "Remove #sticky-expert-btn from footer.php",
+      "targetFile": "footer.php",
+      "expectedFailingTests": [
+        "T1-F13-02",
+        "T4-SCEN-03"
+      ],
+      "detectedFailingTests": [
+        "T1-F13-02",
+        "T4-SCEN-03"
+      ],
+      "exitCode": 1,
+      "passed": true,
+      "durationMs": 495.6115
+    },
+    {
+      "id": "MUT-SHELL-04",
+      "category": "Shell",
+      "description": "Remove #custom-chat-close button from footer.php",
+      "targetFile": "footer.php",
+      "expectedFailingTests": [
+        "T1-F13-03",
+        "T4-SCEN-03"
+      ],
+      "detectedFailingTests": [],
+      "exitCode": 1,
+      "passed": false,
+      "durationMs": 497.0975
+    },
+    {
+      "id": "MUT-SHELL-05",
+      "category": "Shell",
+      "description": "Remove elevenlabs-convai custom element from footer.php",
+      "targetFile": "footer.php",
+      "expectedFailingTests": [
+        "T1-F13-04",
+        "T4-SCEN-06"
+      ],
+      "detectedFailingTests": [
+        "T1-F13-04",
+        "T4-SCEN-06"
+      ],
+      "exitCode": 1,
+      "passed": true,
+      "durationMs": 1427.6595
+    },
+    {
+      "id": "MUT-SHELL-06",
+      "category": "Shell",
+      "description": "Remove @media print stylesheet rules from invoice-maker.php",
+      "targetFile": "invoice-maker.php",
+      "expectedFailingTests": [
+        "T1-F13-05",
+        "T2-F13-05"
+      ],
+      "detectedFailingTests": [
+        "T1-F13-05",
+        "T2-F13-05"
+      ],
+      "exitCode": 1,
+      "passed": true,
+      "durationMs": 817.6986
+    },
+    {
+      "id": "MUT-JS-01",
+      "category": "JavaScript",
+      "description": "Inject fatal syntax error into assets/js/main.js",
+      "targetFile": "assets/js/main.js",
+      "expectedFailingTests": [
+        "T4-SCEN-02"
+      ],
+      "detectedFailingTests": [
+        "T4-SCEN-02"
+      ],
+      "exitCode": 1,
+      "passed": true,
+      "durationMs": 488.1377
+    }
+  ],
+  "assertStats": {
+    "totalTests": 152,
+    "assertCssVarCalls": 6,
+    "assertClampCalls": 2,
+    "assertMatchesCalls": 18,
+    "assertIncludesCalls": 41,
+    "genericAssertCalls": 125,
+    "validateJsSyntaxCalls": 1
+  },
+  "foundLoose": [
+    {
+      "pattern": {},
+      "desc": "Testing for word 'length' in JS",
+      "count": 1
+    },
+    {
+      "pattern": {},
+      "desc": "Testing for word 'innerHTML' in JS",
+      "count": 1
+    },
+    {
+      "pattern": {},
+      "desc": "Testing for word 'setTimeout' in JS",
+      "count": 1
+    },
+    {
+      "pattern": {},
+      "desc": "Testing for word 'DOMContentLoaded' in JS",
+      "count": 2
+    },
+    {
+      "pattern": {},
+      "desc": "Testing for word 'addEventListener' in JS",
+      "count": 1
+    },
+    {
+      "pattern": {},
+      "desc": "Testing for 'box-sizing' in CSS",
+      "count": 1
+    },
+    {
+      "pattern": {},
+      "desc": "Testing for '<a' in HTML",
+      "count": 1
+    },
+    {
+      "pattern": {},
+      "desc": "Testing for 'href=' in HTML",
+      "count": 1
+    }
+  ],
+  "performance": {
+    "runs": 5,
+    "avgTimeMs": 607.8708,
+    "minTimeMs": 423.1696,
+    "maxTimeMs": 813.8616,
+    "memorySnapshots": [
+      {
+        "run": 1,
+        "rssMb": "36.41",
+        "heapUsedMb": "5.45",
+        "heapTotalMb": "6.87",
+        "timeMs": "664.5"
+      },
+      {
+        "run": 2,
+        "rssMb": "36.42",
+        "heapUsedMb": "5.55",
+        "heapTotalMb": "6.87",
+        "timeMs": "813.9"
+      },
+      {
+        "run": 3,
+        "rssMb": "36.42",
+        "heapUsedMb": "5.65",
+        "heapTotalMb": "6.87",
+        "timeMs": "675.0"
+      },
+      {
+        "run": 4,
+        "rssMb": "36.42",
+        "heapUsedMb": "5.74",
+        "heapTotalMb": "6.87",
+        "timeMs": "462.8"
+      },
+      {
+        "run": 5,
+        "rssMb": "36.42",
+        "heapUsedMb": "5.84",
+        "heapTotalMb": "6.87",
+        "timeMs": "423.2"
+      }
+    ]
+  }
+}

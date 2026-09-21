@@ -1,0 +1,67 @@
+# ==============================================================================
+# Automatixes Apache Configurations & SEO Routing
+# ==============================================================================
+
+# Disable Directory Browsing
+Options -Indexes
+Options +FollowSymLinks
+
+# Enable URL Rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Dynamic Sitemap Routing
+    RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+    # 301 Legacy Redirects
+    RewriteRule ^ai-agents/?$ /ai-automated-solutions [R=301,L]
+    RewriteRule ^ai-automations/?$ /ai-automated-solutions [R=301,L]
+
+    # Remove trailing slash from non-directories
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+    # Clean Extensionless PHP URLs
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.php -f
+    RewriteRule ^(.*)$ $1.php [NC,L]
+</IfModule>
+
+# Prevent access to config/package files
+<FilesMatch "^(package\.json|package-lock\.json|composer\.json|composer\.lock|dev-server\.js|\.gitignore|\.env)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Block access to git directory
+RedirectMatch 404 /\.git
+
+# Enable Gzip Compression for Core Web Vitals
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Browser Caching Headers
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+</IfModule>

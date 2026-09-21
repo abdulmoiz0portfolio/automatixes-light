@@ -1,0 +1,581 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "daily-limit-per-acc",
+              "name": "dailyLimit",
+              "value": 30,
+              "type": "number"
+            },
+            {
+              "id": "daily-limit-per-acc-spec",
+              "name": "dailyLimitPerAccount",
+              "value": 30,
+              "type": "number"
+            },
+            {
+              "id": "per-run-batch",
+              "name": "perRunBatchSize",
+              "value": 15,
+              "type": "number"
+            },
+            {
+              "id": "min-delay",
+              "name": "minDelaySeconds",
+              "value": 200,
+              "type": "number"
+            },
+            {
+              "id": "max-delay",
+              "name": "maxDelaySeconds",
+              "value": 280,
+              "type": "number"
+            },
+            {
+              "id": "account-emails",
+              "name": "senderAccounts",
+              "value": [
+                "ceo@bminternational.com.pk",
+                "sales@bminternational.com.pk",
+                "info@bminternational.com.pk"
+              ],
+              "type": "array"
+            },
+            {
+              "id": "account-email",
+              "name": "senderEmail",
+              "value": "ceo@bminternational.com.pk",
+              "type": "string"
+            },
+            {
+              "id": "f1-delay",
+              "name": "followup1DelayDays",
+              "value": 3,
+              "type": "number"
+            },
+            {
+              "id": "f2-delay",
+              "name": "followup2DelayDays",
+              "value": 3,
+              "type": "number"
+            },
+            {
+              "id": "f3-delay",
+              "name": "followup3DelayDays",
+              "value": 4,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "791d6e1a-70e8-41e6-848d-77b3b56a9398",
+      "name": "Config",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1008,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1q-7eys7IUdyHWXaOXN7nYUefGrDV56X-B7StEhp9_fQ",
+          "mode": "list",
+          "cachedResultName": "BMI Email Status",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1q-7eys7IUdyHWXaOXN7nYUefGrDV56X-B7StEhp9_fQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 177992607,
+          "mode": "list",
+          "cachedResultName": "Daily Counter",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1q-7eys7IUdyHWXaOXN7nYUefGrDV56X-B7StEhp9_fQ/edit#gid=177992607"
+        },
+        "options": {}
+      },
+      "id": "73c8debb-a0d9-48fb-9032-a2bd0549fc51",
+      "name": "Read Counter Row",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -864,
+        960
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "0H8BF2AXEbHkp00R",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1q-7eys7IUdyHWXaOXN7nYUefGrDV56X-B7StEhp9_fQ",
+          "cachedResultName": "BMI Email Status"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gid=0",
+          "cachedResultName": "Sheet1"
+        },
+        "options": {}
+      },
+      "id": "d48d9e17-1cf3-4b99-a8cc-8e3ba0edda00",
+      "name": "Read Leads",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -704,
+        960
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "0H8BF2AXEbHkp00R",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1q-7eys7IUdyHWXaOXN7nYUefGrDV56X-B7StEhp9_fQ",
+          "mode": "list",
+          "cachedResultName": "BMI Email Status",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1q-7eys7IUdyHWXaOXN7nYUefGrDV56X-B7StEhp9_fQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 10000001,
+          "mode": "list",
+          "cachedResultName": "E1 Template",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1q-7eys7IUdyHWXaOXN7nYUefGrDV56X-B7StEhp9_fQ/edit#gid=10000001"
+        },
+        "options": {}
+      },
+      "id": "ff1d213f-e12c-4ef1-9560-2858a42b5221",
+      "name": "Read E1 Template",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -560,
+        960
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "0H8BF2AXEbHkp00R",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const config = $('Config').first().json;\n\n// Extract senderAccounts (3 email addresses) and per-account daily limit\nlet senderAccounts = config.senderAccounts;\nif (typeof senderAccounts === 'string') {\n  try {\n    senderAccounts = JSON.parse(senderAccounts);\n  } catch (e) {\n    senderAccounts = null;\n  }\n}\nif (!Array.isArray(senderAccounts) || senderAccounts.length === 0) {\n  senderAccounts = [\n    \"ceo@bminternational.com.pk\",\n    \"sales@bminternational.com.pk\",\n    \"info@bminternational.com.pk\"\n  ];\n}\n\nconst dailyLimitPerAccount = Number(config.dailyLimitPerAccount || config.dailyLimit) || 30;\nconst perRunBatchSize = Number(config.perRunBatchSize) || 15;\nconst minDelaySeconds = Number(config.minDelaySeconds) || 200;\nconst maxDelaySeconds = Number(config.maxDelaySeconds) || 280;\n\n// Read counter rows from Read Counter Row input for each account independently\nconst counterRows = $('Read Counter Row').all().map(item => item.json);\nconst todayStr = new Date().toISOString().substring(0, 10);\n\nconst accountSentCounts = {};\nsenderAccounts.forEach(account => {\n  const row = counterRows.find(r => r && r.dateKey === todayStr && r.emailAddress === account);\n  accountSentCounts[account] = row ? Number(row.sentCount) || 0 : 0;\n});\n\n// Parse templates (Only E1)\nconst e1Draft = $('Read E1 Template').first()?.json || {};\nconst hasE1 = Boolean(e1Draft.Subject && e1Draft.Body);\n\nif (!hasE1) {\n  return [];\n}\n\n// Read leads & filter\nconst leads = $('Read Leads').all().map(item => item.json);\nconst eligibleLeads = [];\nconst seenEmails = new Set();\n\nleads.forEach(lead => {\n  if (!lead || !lead.Emails) return;\n\n  const rawEmail = String(lead.Emails).trim();\n  if (!rawEmail) return;\n\n  const emailKey = rawEmail.toLowerCase();\n\n  // Case-insensitive deduplication using seenEmails set\n  if (seenEmails.has(emailKey)) return;\n\n  // Exclude leads where lead.Replied === 'Yes'\n  const replied = String(lead.Replied || '').trim().toLowerCase() === 'yes';\n  if (replied) return;\n\n  // Exclude leads where lead['E1 Status'] is already set and not 'Pending'\n  const e1Status = String(lead['E1 Status'] || '').trim();\n  const isPending = !e1Status || e1Status.toLowerCase() === 'pending';\n\n  if (isPending) {\n    seenEmails.add(emailKey);\n    eligibleLeads.push({\n      ...lead,\n      nextStage: 'E1'\n    });\n  }\n});\n\n// Round-robin rotation across the 3 sender accounts\nconst leadsToSend = [];\nlet currentAccountIndex = 0;\n\nfor (const lead of eligibleLeads) {\n  if (leadsToSend.length >= perRunBatchSize) {\n    break;\n  }\n\n  let selectedAccount = null;\n  let attempts = 0;\n\n  while (attempts < senderAccounts.length) {\n    const candidateAccount = senderAccounts[currentAccountIndex];\n    const currentSent = accountSentCounts[candidateAccount] || 0;\n\n    currentAccountIndex = (currentAccountIndex + 1) % senderAccounts.length;\n    attempts++;\n\n    if (currentSent < dailyLimitPerAccount) {\n      selectedAccount = candidateAccount;\n      break;\n    }\n  }\n\n  // If all 3 accounts reach 30 emails for the day (or hit a break), stop adding leads\n  if (!selectedAccount) {\n    break;\n  }\n\n  // Increment that account's accountSentCounts[account]\n  accountSentCounts[selectedAccount] = (accountSentCounts[selectedAccount] || 0) + 1;\n  const updatedSentCount = accountSentCounts[selectedAccount];\n\n  // Personalization (Only E1)\n  const leadName = lead['Lead Name'] ? String(lead['Lead Name']).trim() : '';\n  let subject = e1Draft.Subject;\n  let body = e1Draft.Body;\n\n  if (leadName) {\n    subject = subject.replace(/{Lead Name}/g, leadName);\n    body = body.replace(/{Lead Name}/g, leadName);\n  } else {\n    subject = subject.replace(/{Lead Name}/g, '').replace(/[ \\t]+/g, ' ').trim();\n    body = body.replace(/Hi {Lead Name}/gi, 'Hi')\n              .replace(/Hello {Lead Name}/gi, 'Hello')\n              .replace(/{Lead Name}/g, '')\n              .replace(/[ \\t]+/g, ' ');\n  }\n\n  // Calculate random delay or distribution spacing parameters (min 200s, max 280s) over 6-hour window\n  const sendTimeWindow = Math.floor(Math.random() * (maxDelaySeconds - minDelaySeconds + 1)) + minDelaySeconds;\n\n  leadsToSend.push({\n    json: {\n      Emails: lead.Emails,\n      LeadName: leadName,\n      nextStage: 'E1',\n      senderEmail: selectedAccount,\n      subject,\n      body,\n      sentCount: updatedSentCount,\n      sendTimeWindow\n    }\n  });\n}\n\nreturn leadsToSend;"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "ae505478-1eb5-4a1c-8877-9249e8ebc9bb",
+      "name": "Loop Over Leads",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -32,
+        864
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const config = $('Config').first().json;\nconst min = Number(config.minDelaySeconds) || 200;\nconst max = Number(config.maxDelaySeconds) || 280;\nconst waitSeconds = Math.floor(Math.random() * (max - min + 1)) + min;\nreturn { json: { ...$json, waitSeconds } };"
+      },
+      "id": "6c2ed4f0-699d-44ba-b22e-98e783946cfd",
+      "name": "Prepare Send",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        176,
+        896
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "=BM International <{{ $('Loop Over Leads').item.json.senderEmail }}>",
+        "toEmail": "={{ $('Loop Over Leads').item.json.Emails }}",
+        "subject": "={{ $('Loop Over Leads').item.json.subject }}",
+        "emailFormat": "text",
+        "text": "={{ $('Loop Over Leads').item.json.body }}",
+        "options": {
+          "appendAttribution": false,
+          "fileAttachments": "data"
+        }
+      },
+      "id": "ce5a86b6-97ad-4297-a005-953355ae21e3",
+      "name": "Send Email (Zoho SMTP)",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        576,
+        832
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "webhookId": "892bd5aa-6f01-4669-b37f-b6967b75aebb"
+    },
+    {
+      "parameters": {
+        "jsCode": "const lead = $('Loop Over Leads').item.json;\nconst stage = lead.nextStage;\nconst updateData = {\n  Emails: lead.Emails\n};\nupdateData[stage + ' Status'] = 'Sent';\nupdateData[stage + ' Sent Time'] = new Date().toISOString().replace('T', ' ').substring(0, 19);\nupdateData[stage + ' Sender'] = lead.senderEmail;\nreturn { json: updateData };"
+      },
+      "id": "1834c999-35f7-40b1-82b1-517b99b151da",
+      "name": "Prepare Sheet Update Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        736,
+        864
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "1q-7eys7IUdyHWXaOXN7nYUefGrDV56X-B7StEhp9_fQ",
+          "cachedResultName": "BMI Email Status"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gid=0",
+          "cachedResultName": "Sheet1"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "matchingColumns": [
+            "Emails"
+          ]
+        },
+        "options": {}
+      },
+      "id": "2276a676-eade-4501-835b-e47e46267115",
+      "name": "Mark Lead As Sent",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        880,
+        848
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "0H8BF2AXEbHkp00R",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1q-7eys7IUdyHWXaOXN7nYUefGrDV56X-B7StEhp9_fQ",
+          "mode": "list",
+          "cachedResultName": "BMI Email Status",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1q-7eys7IUdyHWXaOXN7nYUefGrDV56X-B7StEhp9_fQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 177992607,
+          "mode": "list",
+          "cachedResultName": "Daily Counter",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1q-7eys7IUdyHWXaOXN7nYUefGrDV56X-B7StEhp9_fQ/edit#gid=177992607"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "dateKey": "={{ $today.toFormat(\"yyyy-LL-dd\") }}",
+            "emailAddress": "={{ $('Loop Over Leads').item.json.senderEmail }}",
+            "sentCount": "={{ $('Loop Over Leads').item.json.sentCount }}"
+          },
+          "matchingColumns": [
+            "dateKey",
+            "emailAddress"
+          ],
+          "schema": [
+            {
+              "id": "dateKey",
+              "displayName": "dateKey",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "emailAddress",
+              "displayName": "emailAddress",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "sentCount",
+              "displayName": "sentCount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "14df8692-c5a6-4347-a42c-b0c41966b4ca",
+      "name": "Update Daily Counter",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1056,
+        864
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "0H8BF2AXEbHkp00R",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": "={{ $('Prepare Send').item.json.waitSeconds }}"
+      },
+      "id": "1157c9ab-a68c-46ef-8edd-a74e5ec6e87a",
+      "name": "Random Delay",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1216,
+        896
+      ],
+      "webhookId": "08dbd75a-ece0-49c4-84f4-cdf0c9cad46f"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 10
+            }
+          ]
+        }
+      },
+      "id": "a3328896-1f21-4209-b46e-a0aca999d1ca",
+      "name": "Every 25-30 Minutes (Testing)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -1200,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "fileSelector": "C:\\Users\\Moiz Baig\\.n8n-files\\BM INTERNATIONAL (Company Profile).pdf",
+        "options": {
+          "dataPropertyName": "data"
+        }
+      },
+      "id": "11b387bb-5af4-4f28-84b7-02ce0eb6a595",
+      "name": "Read Portfolio From Disk",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        352,
+        880
+      ],
+      "alwaysOutputData": true
+    }
+  ],
+  "connections": {
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "Read Counter Row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Counter Row": {
+      "main": [
+        [
+          {
+            "node": "Read Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Leads": {
+      "main": [
+        [
+          {
+            "node": "Read E1 Template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read E1 Template": {
+      "main": [
+        [
+          {
+            "node": "Compute Send Capacity & Filter Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compute Send Capacity & Filter Leads": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Leads": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Prepare Send",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Send": {
+      "main": [
+        [
+          {
+            "node": "Read Portfolio From Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email (Zoho SMTP)": {
+      "main": [
+        [
+          {
+            "node": "Prepare Sheet Update Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Sheet Update Data": {
+      "main": [
+        [
+          {
+            "node": "Mark Lead As Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Lead As Sent": {
+      "main": [
+        [
+          {
+            "node": "Update Daily Counter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Daily Counter": {
+      "main": [
+        [
+          {
+            "node": "Random Delay",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Random Delay": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every 25-30 Minutes (Testing)": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Portfolio From Disk": {
+      "main": [
+        [
+          {
+            "node": "Send Email (Zoho SMTP)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "instanceId": "8dc6f0b76a17117f66fd2773f9e429aeb146db7bbbdda0b72779da61ce5601d7"
+  }
+}

@@ -1,0 +1,178 @@
+import { workflow, node, trigger, sticky, placeholder, newCredential, ifElse, splitInBatches, nextBatch, expr } from '@n8n/workflow-sdk';
+
+// ---- TRIGGER ----
+const scheduleTrigger = trigger({
+  type: 'n8n-nodes-base.scheduleTrigger',
+  version: 1.3,
+  config: {
+    name: 'Every 30 Min',
+    parameters: {
+      rule: {
+        interval: [{ field: 'minutes', minutesInterval: 30 }]
+      }
+    }
+  },
+  output: [{}]
+});
+
+// ---- FETCH PENDING LEADS FROM MASTER SHEET ----
+const fetchPendingLeads = node({
+  type: 'n8n-nodes-base.googleSheets',
+  version: 4.5,
+  config: {
+    name: 'Fetch Pending Leads',
+    parameters: {
+      resource: 'sheet',
+      operation: 'read',
+      documentId: { mode: 'list', value: placeholder('Master Sheet ID') },
+      sheetName: { mode: 'list', value: placeholder('Sheet/Tab name e.g. Leads') },
+      filtersUI: {
+        values: [
+          { lookupColumn: 'Verified', lookupValue: 'true' },
+          { lookupColumn: 'Sent', lookupValue: '' }
+        ]
+      },
+      options: { returnFirstMatch: false }
+    },
+    credentials: { googleSheetsOAuth2Api: newCredential('Google Sheets') }
+  },
+  output: [
+    { row_number: 2, Email: 'lead1@example.com', Name: 'Lead One', Company: 'ABC Textiles', Verified: 'true', Sent: '' },
+    { row_number: 3, Email: 'lead2@example.com', Name: 'Lead Two', Company: 'XYZ Garments', Verified: 'true', Sent: '' }
+  ]
+});
+
+// ---- SAFETY FILTER (extra check, in case Sheets filter misses edge cases) ----
+const filterValid = node({
+  type: 'n8n-nodes-base.filter',
+  version: 2.2,
+  config: {
+    name: 'Filter Valid Leads',
+    parameters: {
+      conditions: {
+        options: { caseSensitive: true, leftValue: '', typeValidation: 'strict' },
+        conditions: [
+          { leftValue: expr('{{ $json.Verified }}'), operator: { type: 'string', operation: 'equals' }, rightValue: 'true' },
+          { leftValue: expr('{{ $json.Email }}'), operator: { type: 'string', operation: 'notEmpty' } },
+          { leftValue: expr('{{ $json.Sent }}'), operator: { type: 'string', operation: 'notEquals' }, rightValue: 'true' }
+        ],
+        combinator: 'and'
+      }
+    }
+  },
+  output: [
+    { row_number: 2, Email: 'lead1@example.com', Name: 'Lead One', Company: 'ABC Textiles', Verified: 'true', Sent: '' }
+  ]
+});
+
+// ---- LOOP: ONE LEAD AT A TIME (deliverability / ramp-up control) ----
+const sendLoop = splitInBatches({
+  version: 3,
+  config: {
+    name: 'Send One By One',
+    parameters: { batchSize: 1 }
+  }
+});
+
+// ---- THROTTLE DELAY BETWEEN SENDS ----
+const waitBetweenSends = node({
+  type: 'n8n-nodes-base.wait',
+  version: 1.1,
+  config: {
+    name: 'Wait Between Sends',
+    parameters: {
+      amount: 45,
+      unit: 'seconds'
+    }
+  },
+  output: [{}]
+});
+
+// ---- SEND EMAIL VIA ZOHO SMTP ----
+const sendEmail = node({
+  type: 'n8n-nodes-base.emailSend',
+  version: 2.1,
+  config: {
+    name: 'Send Cold Email',
+    onError: 'continueErrorOutput',
+    parameters: {
+      fromEmail: placeholder('Your Zoho sending email, e.g. hello@yourdomain.com'),
+      toEmail: expr('{{ $json.Email }}'),
+      subject: expr('{{ $json.Name }}, sourcing partner for {{ $json.Company }}'),
+      emailFormat: 'html',
+      html: expr(
+        'Hi {{ $json.Name }},<br><br>' +
+        'I came across {{ $json.Company }} and wanted to reach out...<br><br>' +
+        'Best regards,<br>BM International'
+      )
+    },
+    credentials: { smtp: newCredential('Zoho SMTP') }
+  },
+  output: [{ messageId: '<abc123@zoho.com>' }]
+});
+
+// ---- ON SUCCESS: MARK SENT ----
+const markSent = node({
+  type: 'n8n-nodes-base.googleSheets',
+  version: 4.5,
+  config: {
+    name: 'Mark As Sent',
+    parameters: {
+      resource: 'sheet',
+      operation: 'update',
+      documentId: { mode: 'list', value: placeholder('Master Sheet ID') },
+      sheetName: { mode: 'list', value: placeholder('Sheet/Tab name e.g. Leads') },
+      columns: {
+        matchingColumns: ['row_number'],
+        value: {
+          row_number: expr("{{ $('Send One By One').item.json.row_number }}"),
+          Sent: 'true',
+          SentAt: expr('{{ $now.toISO() }}')
+        }
+      }
+    },
+    credentials: { googleSheetsOAuth2Api: newCredential('Google Sheets') }
+  },
+  output: [{ success: true }]
+});
+
+// ---- ON FAILURE: MARK FAILED ----
+const markFailed = node({
+  type: 'n8n-nodes-base.googleSheets',
+  version: 4.5,
+  config: {
+    name: 'Mark As Failed',
+    parameters: {
+      resource: 'sheet',
+      operation: 'update',
+      documentId: { mode: 'list', value: placeholder('Master Sheet ID') },
+      sheetName: { mode: 'list', value: placeholder('Sheet/Tab name e.g. Leads') },
+      columns: {
+        matchingColumns: ['row_number'],
+        value: {
+          row_number: expr("{{ $('Send One By One').item.json.row_number }}"),
+          Sent: 'failed',
+          SentAt: expr('{{ $now.toISO() }}')
+        }
+      }
+    },
+    credentials: { googleSheetsOAuth2Api: newCredential('Google Sheets') }
+  },
+  output: [{ success: true }]
+});
+
+// ---- ASSEMBLE ----
+export default workflow('cold-email-outreach', 'Cold Email Outreach - BMI')
+  .add(scheduleTrigger)
+  .to(fetchPendingLeads)
+  .to(filterValid)
+  .to(sendLoop
+    .onDone(sticky('## Batch complete\nAll pending leads for this run processed.'))
+    .onEachBatch(
+      waitBetweenSends
+        .to(sendEmail
+          .to(markSent.to(nextBatch(sendLoop)))
+          .onError(markFailed.to(nextBatch(sendLoop)))
+        )
+    )
+  );

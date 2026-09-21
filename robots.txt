@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+Disallow: /admin.php
+Disallow: /admin
+
+# Allow Favicon crawlers
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Google-Favicon
+Allow: /
+
+# Explicitly allow AI and LLM Search Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://automatixes.com/sitemap.xml
