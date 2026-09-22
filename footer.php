@@ -8,7 +8,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget">
                         <a href="index" class="footer-logo mb-3 d-inline-block text-decoration-none">
-                            <img src="assets/img/logo/automatixes-logo-new.png" alt="Automatixes" style="height: 48px; width: auto; object-fit: contain;">
+                            <img src="assets/img/logo/automatixes-logo-clean.png" alt="Automatixes" style="height: 48px; width: auto; object-fit: contain;">
                         </a>
                         <p class="text-muted">
                             At Automatixes, we operate at the intersection of AI agents, sophisticated workflow automation, and custom web development. Let us help automate your growth.

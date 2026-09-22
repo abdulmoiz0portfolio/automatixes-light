@@ -848,7 +848,7 @@ include 'header.php';
             // 1. Company Information (Pre-filled, Editable)
             const company = ref({
                 showLogo: true,
-                logo: 'assets/img/logo/automatixes-logo-new.png',
+                logo: 'assets/img/logo/automatixes-logo-clean.png',
                 name: 'Automatixes',
                 tagline: 'Empowering Businesses with AI & Automation',
                 address: 'Remote / Worldwide',
@@ -879,7 +879,7 @@ include 'header.php';
             };
 
             const resetLogo = () => {
-                company.value.logo = 'assets/img/logo/automatixes-logo-new.png';
+                company.value.logo = 'assets/img/logo/automatixes-logo-clean.png';
                 company.value.showLogo = true;
             };
 

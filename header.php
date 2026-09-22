@@ -266,7 +266,7 @@ $og_image = (!empty($active_meta['image']))
       "@type": "ProfessionalService",
       "name": "Automatixes",
       "url": "<?php echo $canonical_base; ?>",
-      "logo": "<?php echo $canonical_base; ?>/assets/img/logo/automatixes-logo-new.png",
+      "logo": "<?php echo $canonical_base; ?>/assets/img/logo/automatixes-logo-clean.png",
       "image": "<?php echo $canonical_base; ?>/assets/img/services/ai_automations.jpg",
       "description": "An AI-first automation agency that designs custom AI agents and workflow automations to run business operations 24/7.",
       "telephone": "+92-336-6920141",
@@ -432,7 +432,7 @@ $og_image = (!empty($active_meta['image']))
         <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-transparent py-0">
                 <a class="navbar-brand d-flex align-items-center" href="index">
-                    <img src="assets/img/logo/automatixes-logo-new.png" alt="Automatixes Logo" style="height: 45px; width: auto; object-fit: contain;">
+                    <img src="assets/img/logo/automatixes-logo-clean.png" alt="Automatixes Logo" style="height: 45px; width: auto; object-fit: contain;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

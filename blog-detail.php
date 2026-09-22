@@ -115,7 +115,7 @@ include 'header.php';
                 <h1 class="display-5 fw-extrabold text-white mb-4"><?php echo htmlspecialchars($title); ?></h1>
                 <div class="d-flex align-items-center justify-content-center text-white-50 mb-5">
                     <div class="d-flex align-items-center me-4">
-                        <img src="assets/img/logo/automatixes-logo-new.png" alt="<?php echo htmlspecialchars($author); ?>" class="me-2" style="width: 28px; height: 28px; object-fit: contain;">
+                        <img src="assets/img/logo/automatixes-logo-clean.png" alt="<?php echo htmlspecialchars($author); ?>" class="me-2" style="width: 28px; height: 28px; object-fit: contain;">
                         <span class="fw-semibold text-white"><?php echo htmlspecialchars($author); ?></span>
                     </div>
                     <div>

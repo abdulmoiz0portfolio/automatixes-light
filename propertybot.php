@@ -96,7 +96,7 @@ $custom_meta = [
             <!-- Brand & Advisory Desk Identity -->
             <div class="flex items-center gap-3">
                 <a href="index" class="flex items-center gap-2 group" title="Return to Automatixes">
-                    <img src="assets/img/logo/automatixes-logo-new.png" alt="Automatixes" class="h-8 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity">
+                    <img src="assets/img/logo/automatixes-logo-clean.png" alt="Automatixes" class="h-8 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity">
                 </a>
                 <div class="h-5 w-px bg-slate-100 mx-1 hidden sm:block"></div>
                 <div class="flex items-center gap-2.5">
