@@ -2369,3 +2369,11 @@ body, html {
 .hero-section .text-white-50 { color: rgba(255,255,255,0.5) !important; }
 .hero-section .text-muted { color: #94a3b8 !important; }
 .hero-section .text-on-neon { color: #0b0f19 !important; }
+
+/* Navbar Sage Green Override */
+.header-nav { background: rgba(139, 154, 110, 0.95) !important; border-bottom: 1px solid rgba(247, 242, 235, 0.15) !important; }
+.header-nav.sticky { background: rgba(139, 154, 110, 0.98) !important; border-bottom: 1px solid #F7F2EB !important; box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important; }
+
+/* Make navbar text readable on the Sage background */
+.header-nav .nav-link { color: #F7F2EB !important; }
+.header-nav .nav-link:hover { color: #C8E019 !important; }
