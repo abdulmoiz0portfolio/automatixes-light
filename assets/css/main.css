@@ -2383,3 +2383,25 @@ body, html {
 .header-nav.sticky { background: rgba(234, 226, 214, 0.98) !important; border-bottom: 1px solid #8B9A6E !important; box-shadow: 0 4px 20px rgba(0,0,0,0.05) !important; }
 .header-nav .nav-link { color: #1a1b18 !important; }
 .header-nav .nav-link:hover { color: #8B9A6E !important; }
+
+/* Fix Neon text contrast on light background */
+.btn-outline-brand { 
+    color: #1a1b18 !important; 
+    border-color: #8B9A6E !important; 
+    background-color: transparent !important;
+}
+.btn-outline-brand:hover {
+    background-color: #8B9A6E !important;
+    color: #F7F2EB !important;
+}
+.text-accent-brand, .text-accent-neon {
+    color: #2C3524 !important; /* Dark earthy color instead of neon for text */
+}
+
+/* Fix inline gradient for Notable Projects (and similar) by overriding background-clip text */
+h2 span[style*="-webkit-background-clip: text"] {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: #8B9A6E !important; /* Sage green for emphasis instead of white-to-neon */
+    color: #8B9A6E !important;
+}

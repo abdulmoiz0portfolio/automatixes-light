@@ -622,7 +622,7 @@
                 OUR PORTFOLIO
             </span>
             <h2 class="display-5 fw-extrabold text-white mb-3" style="letter-spacing: -0.03em;">
-                Notable <span style="background: linear-gradient(135deg, #FFFFFF 30%, #C8E019 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Projects</span>
+                Notable <span class="text-sage" style="color: #8B9A6E !important;">Projects</span>
             </h2>
             <p class="text-white-50 fs-5 mx-auto" style="max-width: 680px; line-height: 1.6;">
                 Explore our extensive portfolio of production AI agents, autonomous workflows, and custom engineering deployments.
