@@ -2407,3 +2407,36 @@ h2 span[style*="-webkit-background-clip: text"] {
 .header-nav.sticky { background: rgba(8, 12, 22, 0.98) !important; border-bottom: 1px solid rgba(200, 224, 25, 0.2) !important; box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important; }
 .header-nav .nav-link { color: #F7F2EB !important; }
 .header-nav .nav-link:hover { color: #C8E019 !important; }
+
+/* Language Dropdown Fixes */
+.dropdown-menu {
+    background-color: #F7F2EB !important;
+    border: 1px solid rgba(139, 154, 110, 0.2) !important;
+}
+.dropdown-item {
+    color: #1a1b18 !important;
+}
+.dropdown-item:hover, .dropdown-item:focus, .dropdown-item.active {
+    background-color: #8B9A6E !important;
+    color: #F7F2EB !important;
+}
+.dropdown-header {
+    color: #5a6647 !important;
+}
+.dropdown-divider {
+    border-color: rgba(139, 154, 110, 0.2) !important;
+}
+
+/* Override inline neon styles inside dropdowns */
+.dropdown-item span[style*="color"], .dropdown-item .badge {
+    color: inherit !important;
+}
+.dropdown-item:hover span[style*="color"], .dropdown-item:hover .badge {
+    color: #F7F2EB !important;
+}
+.dropdown-item small {
+    color: #5a6647 !important;
+}
+.dropdown-item:hover small, .dropdown-item.active small {
+    color: #F7F2EB !important;
+}
